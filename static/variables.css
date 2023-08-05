@@ -1,0 +1,8 @@
+:root {
+  --base-font-size: 16px;
+  --spacing-1x: 1rem;
+  --spacing-2x: 2rem;
+  --spacing-3x: 3rem;
+
+  --text-color: #000;
+}

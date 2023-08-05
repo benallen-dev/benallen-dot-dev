@@ -1,0 +1,9 @@
+{{ define "main" -}}
+  <h1>List</h1>
+  {{- range .Pages }}
+    <li>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ .Summary | truncate 80 }}
+    </li>
+  {{ end -}}
+{{- end }}

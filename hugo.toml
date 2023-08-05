@@ -1,0 +1,6 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+
+
+title = 'Ben Allen.dev'
+copyright = "{year} benallen.dev"
