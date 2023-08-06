@@ -1,6 +1,11 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 
-
 title = 'Ben Allen.dev'
 copyright = "{year} benallen.dev"
+
+[imaging]
+  anchor = 'Smart'
+  bgColor = '#ffffff'
+  quality = 100
+  resampleFilter = 'Lanczos'

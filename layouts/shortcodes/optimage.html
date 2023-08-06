@@ -1,0 +1,20 @@
+{{ $img := .Page.Resources.GetMatch (printf "*%s*" (.Get 0)) }}
+{{ $img240 := $img.Resize "240x" }}
+{{ $img480 := $img.Resize "480x" }}
+{{ $img720 := $img.Resize "720x" }}
+{{ $img960 := $img.Resize "960x" }}
+{{ $img1280 := $img.Resize "1280x" }}
+
+<img
+  src="{{ $img.RelPermalink }}"
+  alt="{{ .Get 1 }}"
+  srcset="
+    {{ $img240.RelPermalink }} 240w,
+    {{ $img480.RelPermalink }} 480w,
+    {{ $img720.RelPermalink }} 720w,
+    {{ $img960.RelPermalink }} 960w,
+    {{ $img1280.RelPermalink }} 1280w
+    "
+  loading="lazy"
+  width="100%"
+  >

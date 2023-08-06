@@ -1,0 +1,19 @@
+{{ define "main" -}}
+This is a special page for the homepage.
+
+{{ .Content }}
+
+<div>
+  <ul>
+    {{- range .Pages }}
+
+    <li>
+      <h6><a href="{{ .Permalink }}">{{ .Title }}</a></h6>
+    </li>
+    {{- end }}
+  </ul>
+  
+
+  
+</div>
+{{- end }}
