@@ -1,5 +1,14 @@
 body {
 	font-family: sans-serif;
   font-size: var(--base-font-size);
-	color: #ccc ;
+	/* color: #ccc ; */
+}
+
+a {
+	color: var(--color-link);
+	font-style: normal;
+}
+
+a:visited {
+	color: var(--color-link-visited);
 }

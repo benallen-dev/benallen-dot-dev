@@ -1,15 +1,40 @@
-{{ define "main" -}} This is a special page for the homepage. {{ .Content }}
+{{ define "customHead" -}}
 
-<div class="hero"></div>
+<link rel="stylesheet" href="homepage.css" />
+{{ end }}
 
-<div class="flexcontainer">
+{{ define "pre-main" -}}
+
+{{ $img := resources.Get "images/hero.jpg"}}
+{{ $img240 := $img.Resize "240x" }}
+{{ $img480 := $img.Resize "480x" }}
+{{ $img720 := $img.Resize "720x" }}
+{{ $img960 := $img.Resize "960x" }}
+{{ $img1280 := $img.Resize "1280x" }}
+
+<div class="hero">
+ 
+  <img
+    src="{{ $img.RelPermalink }}"
+    alt="Hero image by Peter Olexa on Unsplash"
+    srcset="
+      {{ $img240.RelPermalink }} 240w,
+      {{ $img480.RelPermalink }} 480w,
+      {{ $img720.RelPermalink }} 720w,
+      {{ $img960.RelPermalink }} 960w,
+      {{ $img1280.RelPermalink }} 1280w,
+      {{ $img.RelPermalink }} 1920w
+      "
+    loading="preload"
+    width="100%"
+    >
+</div>
+{{ end }}
+
+{{ define "main" -}}
+<div class="flexcontainer-horizontal">
   <div class="introtext">
-    <h2>Software development sucks</h2>
-    <p>
-      This website is basically me ranting about all the ways in which
-      javascript will ruin your life.
-    </p>
-    <p>TODO: Remove salt from webpage.</p>
+    {{ .Content }}
   </div>
   <div class="tag-cloud">
     <ul>

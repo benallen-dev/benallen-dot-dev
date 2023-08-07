@@ -1,0 +1,43 @@
+div.hero {
+  width: 100vw;
+  justify-self: center;
+  overflow-y: hidden;
+  overflow-x: visible;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  /* position: relative; */
+}
+
+header {
+  /* position: absolute; */
+  top: 0;
+}
+
+div.flexcontainer-horizontal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+div.flexcontainer-vertical {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+div.introtext {
+  flex: 1 1 50%;
+  border: 1px solid black;
+  margin: 0px;
+  padding: 1rem;
+}
+
+div.tag-cloud {
+  flex: 1 1 50%;
+  border: 1px solid black;
+  margin: 0px;
+  padding: 1rem;
+}

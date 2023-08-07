@@ -1,8 +1,15 @@
 ---
 title: "Home"
 date: 2023-08-06T17:52:49+02:00
+customCss: "homepage.css"
 draft: false
+menu: 
+  main:
+    weight: 1
 ---
 
-Hi! I'm some content for the index page
+## Computers suck ass
 
+This website is basically me ranting about all the ways in which javascript will ruin your life.
+
+TODO: Remove salt from webpage

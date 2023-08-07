@@ -1,13 +1,13 @@
 article {
-  margin: var(--spacing-2x);
+  margin: 2rem;
   max-width: 650px;
   padding: 1.5em;
 
-  background-color: #fff;
-  border-color: #777;
+  /* background-color: #fff;
+  border-color: #777; */
   border-radius: 4px; 
 
-  color: var(--text-color);
+  /* color: var(--text-color); */
   text-align: justify;
 }
 
