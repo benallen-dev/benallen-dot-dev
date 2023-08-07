@@ -1,7 +1,26 @@
-{{ define "main" -}}
-This is a special page for the homepage.
+{{ define "main" -}} This is a special page for the homepage. {{ .Content }}
 
-{{ .Content }}
+<div class="hero"></div>
+
+<div class="flexcontainer">
+  <div class="introtext">
+    <h2>Software development sucks</h2>
+    <p>
+      This website is basically me ranting about all the ways in which
+      javascript will ruin your life.
+    </p>
+    <p>TODO: Remove salt from webpage.</p>
+  </div>
+  <div class="tag-cloud">
+    <ul>
+      {{ range sort .Site.Taxonomies.tags "Count" "desc" }}
+      <li>
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
 
 <div>
   <ul>
@@ -12,8 +31,5 @@ This is a special page for the homepage.
     </li>
     {{- end }}
   </ul>
-  
-
-  
 </div>
 {{- end }}

@@ -1,6 +1,8 @@
 ---
 title: "Building a website without React in 2023 feels super weird"
 date: 2023-08-05T17:28:52+02:00
+tags: ["webdev", "hugo", "react"]
+summary: "I've been doing the React thing for so long that I've forgotten how half of this HTML and CSS stuff works. As a result, I'm suffering full-blown impostor syndrome."
 draft: false
 ---
 

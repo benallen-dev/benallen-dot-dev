@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2023-08-06T11:58:05+02:00
-draft: true
+draft: false
 ---
 
 # About

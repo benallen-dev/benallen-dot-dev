@@ -1,14 +1,14 @@
 ---
 title: "Hello World"
 date: 2023-08-05T15:44:51+02:00
-draft: true
+draft: false
 ---
 
 <!-- ---
 title: "Ben is awesome"
 date: 2023-08-01T12:35:29+02:00
 tags: ["testing"]
-draft: true
+draft: false
 --- -->
 <!-- 
 [Virgil](https://excalidraw.com/Virgil.woff2)

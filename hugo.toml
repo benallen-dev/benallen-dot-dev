@@ -9,3 +9,7 @@ copyright = "{year} benallen.dev"
   bgColor = '#ffffff'
   quality = 100
   resampleFilter = 'Lanczos'
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
