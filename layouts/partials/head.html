@@ -4,4 +4,8 @@
 <link rel="canonical" href="{{ .Site.BaseURL }}" />
 <link rel="stylesheet" type="text/css" href="/index.css" />
 
+{{ with .Page.Params.extraStyleSheet }}
+<link rel="stylesheet" type="text/css" href="/extraStyles/{{ . }}" />
+{{ end }}
+
 <title>{{ .Page.Title }}</title>
