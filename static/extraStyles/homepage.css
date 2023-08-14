@@ -1,4 +1,11 @@
 div.hero {
+
+  @media (min-width: 600px) {
+    height: 50vh;
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+  }
+/*     
   width: 100vw;
   justify-self: center;
   overflow-y: hidden;
@@ -8,7 +15,7 @@ div.hero {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  /* position: relative; */
+  position: relative; */
 }
 
 header {

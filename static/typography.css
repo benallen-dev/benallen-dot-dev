@@ -1,7 +1,7 @@
 body {
-	font-family: sans-serif;
+	font-family: var(--font-family-base);
+  font-weight: var(--font-weight-base);
   font-size: var(--base-font-size);
-	/* color: #ccc ; */
 }
 
 a {
@@ -11,4 +11,9 @@ a {
 
 a:visited {
 	color: var(--color-link-visited);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
 }

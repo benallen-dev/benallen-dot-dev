@@ -32,3 +32,11 @@ header nav ul {
   flex-direction: row;
   width: 100%;
 }
+
+header nav ul li {
+  margin-left: 1rem;
+}
+
+header nav ul li:first-child {
+  margin-left: 0;
+}

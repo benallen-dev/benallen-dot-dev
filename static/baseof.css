@@ -27,3 +27,6 @@ main {
   max-width: 800px;
 }
 
+pre {
+  padding: 1rem;
+}

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Expletus Sans";
+  src: url("/fonts/ExpletusSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Hind";
+  src: url("/fonts/Hind-Regular.ttf") format("truetype");
+}
