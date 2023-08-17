@@ -36,7 +36,8 @@
   <div class="introtext">
     {{ .Content }}
   </div>
-  <div class="tag-cloud">
+  {{- partial "tag-cloud.html" . -}}
+  <!-- <div class="tag-cloud">
     <ul>
       {{ range sort .Site.Taxonomies.tags "Count" "desc" }}
       <li>
@@ -44,7 +45,7 @@
       </li>
       {{ end }}
     </ul>
-  </div>
+  </div> -->
 </div>
 
 <div>

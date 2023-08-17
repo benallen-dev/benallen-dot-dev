@@ -1,7 +1,7 @@
 div.hero {
 
   @media (min-width: 600px) {
-    height: 50vh;
+    height: 33vh;
     background-image: url('/images/hero.jpg');
     background-size: cover;
   }
@@ -42,9 +42,3 @@ div.introtext {
   padding: 1rem;
 }
 
-div.tag-cloud {
-  flex: 1 1 50%;
-  border: 1px solid black;
-  margin: 0px;
-  padding: 1rem;
-}

@@ -10,6 +10,4 @@ menu:
 
 ## Computers suck ass
 
-This website is basically me ranting about all the ways in which javascript will ruin your life.
-
-TODO: Remove salt from webpage
+This website is basically me ranting about all the ways in which Javascript will ruin your life.
