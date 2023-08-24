@@ -2,11 +2,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="canonical" href="{{ .Site.BaseURL }}" />
-<link rel="stylesheet" type="text/css" href="/index.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/index.css" /> -->
 
-<!-- <link rel="preload" href="https://fonts.googleapis.com">
-<link rel="preload" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Hind&display=swap" > -->
+
+{{ $options := dict "transpiler" "dartsass" "targetPath" "index.css" }}
+{{ with resources.Match "scss/**.scss" | resources.Concat "bundle.scss" | toCSS $options | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+
 
 {{ with .Page.Params.extraStyleSheet }}
 <link rel="stylesheet" type="text/css" href="/extraStyles/{{ . }}" />

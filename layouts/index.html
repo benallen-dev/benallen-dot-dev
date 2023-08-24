@@ -1,33 +1,10 @@
 {{ define "customHead" -}}
 
-<link rel="stylesheet" href="extraStyles/homepage.css" />
+<link rel="stylesheet" href="homepage.css" />
 {{ end }}
 
 {{ define "pre-main" -}}
-
-{{ $img := resources.Get "images/hero.jpg"}}
-{{ $img240 := $img.Resize "240x" }}
-{{ $img480 := $img.Resize "480x" }}
-{{ $img720 := $img.Resize "720x" }}
-{{ $img960 := $img.Resize "960x" }}
-{{ $img1280 := $img.Resize "1280x" }}
-
 <div class="hero">
-<!--  
-  <img
-    src="{{ $img240.RelPermalink }}"
-    alt="Hero image by Peter Olexa on Unsplash"
-    srcset="
-      {{ $img240.RelPermalink }} 240w,
-      {{ $img480.RelPermalink }} 480w,
-      {{ $img720.RelPermalink }} 720w,
-      {{ $img960.RelPermalink }} 960w,
-      {{ $img1280.RelPermalink }} 1280w,
-      {{ $img.RelPermalink }} 1920w
-      "
-    loading="preload"
-    width="100%"
-    > -->
 </div>
 {{ end }}
 
@@ -37,15 +14,6 @@
     {{ .Content }}
   </div>
   {{- partial "tag-cloud.html" . -}}
-  <!-- <div class="tag-cloud">
-    <ul>
-      {{ range sort .Site.Taxonomies.tags "Count" "desc" }}
-      <li>
-        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}
-      </li>
-      {{ end }}
-    </ul>
-  </div> -->
 </div>
 
 <div>

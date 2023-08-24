@@ -4,18 +4,8 @@ div.hero {
     height: 33vh;
     background-image: url('/images/hero.jpg');
     background-size: cover;
+    background-position: center;
   }
-/*     
-  width: 100vw;
-  justify-self: center;
-  overflow-y: hidden;
-  overflow-x: visible;
-  max-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  position: relative; */
 }
 
 header {
