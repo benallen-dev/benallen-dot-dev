@@ -1,15 +1,15 @@
-div.hero {
+{{ $hero := resources.Get "images/hero.jpg" }}
 
+div.hero {
   @media (min-width: 600px) {
     height: 33vh;
-    background-image: url('/images/hero.jpg');
+    background-image: url('{{ $hero.RelPermalink }}');
     background-size: cover;
     background-position: center;
   }
 }
 
 header {
-  /* position: absolute; */
   top: 0;
 }
 

@@ -7,7 +7,7 @@ body {
 	color: var(--color-text);
 
 	font-family: sans-serif ;
-  min-height: 100vh;
+	min-height: 100vh;
 
 	display: flex;
 	flex-direction: column;
@@ -23,10 +23,10 @@ main {
 	overflow-x: hidden;
 	overflow-y: scroll;
 	border: 1px solid black;
-  margin: 0 auto;
-  max-width: 800px;
+	margin: 0 auto;
+	max-width: 800px;
 }
 
 pre {
-  padding: 1rem;
+	padding: 1rem;
 }
