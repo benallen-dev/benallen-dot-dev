@@ -1,34 +1,34 @@
 {{ $hero := resources.Get "images/hero.jpg" }}
 
 div.hero {
-  @media (min-width: 600px) {
-    height: 33vh;
-    background-image: url('{{ $hero.RelPermalink }}');
-    background-size: cover;
-    background-position: center;
-  }
+	@media (min-width: 600px) {
+		height: 33vh;
+		background-image: url('{{ $hero.RelPermalink }}');
+		background-size: cover;
+		background-position: center;
+	}
 }
 
 header {
-  top: 0;
+	top: 0;
 }
 
 div.flexcontainer-horizontal {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
 }
 
 div.flexcontainer-vertical {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 div.introtext {
-  flex: 1 1 50%;
-  border: 1px solid black;
-  margin: 0px;
-  padding: 1rem;
+	flex: 1 1 50%;
+	border: 1px solid black;
+	margin: 0px;
+	padding: 1rem;
 }
 
