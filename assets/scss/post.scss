@@ -1,18 +1,19 @@
 div.post {
-
-	&::before {
-		content: "Hello Post!"
-	}
-
 	display: flex;
 	width: 100%;
 
+	border: 1px solid white;
+
 	article {
-		flex: 2 1 auto;
+		max-width: 70%;
+		margin: 1rem;
+		flex: 1 0 auto;
+		border: white solid	1px;
 	}
 
 
 	aside {
 		flex: 1 0 auto;
+		border: white solid 1px;
 	}
 }

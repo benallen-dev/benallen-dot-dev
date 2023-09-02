@@ -1,0 +1,23 @@
+{{ define "main" -}}
+<div class="post">
+	<article>{{ .Content }}</article>
+	<aside>
+		<section>
+			<h3>Meta</h3>
+			<ul>
+				<li>Series:</li>
+				<li>Tags:</li>
+				<li>Date:</li>
+				<li>Share:</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Navigation</h3>
+			<ul>
+				<li>Previous</li>
+				<li>Next</li>
+			</ul>
+		</section>
+	</aside>
+</div>
+{{ end }}

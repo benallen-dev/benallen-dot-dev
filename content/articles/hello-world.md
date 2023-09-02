@@ -2,17 +2,9 @@
 title: "Hello World"
 date: 2023-08-05T15:44:51+02:00
 draft: false
+summary: "This is a hello world test post. If you're reading this, hi, I'm a summary!"
+layout: post
 ---
-
-<!-- ---
-title: "Ben is awesome"
-date: 2023-08-01T12:35:29+02:00
-tags: ["testing"]
-draft: false
---- -->
-<!-- 
-[Virgil](https://excalidraw.com/Virgil.woff2)
-[Cascadia](https://excalidraw.com/Cascadia.woff2) -->
 
 # So basically 
 I started messing around with Hugo as an alternative to pulling up a giant-ass framework like React or even Next.JS and instead spent 25 minutes making a cool gradient.
