@@ -3,6 +3,15 @@ footer {
 	padding: 1em;
 	text-align: center;
 	font-size: 0.8em;
-	/* color: #ccc; */
-	/* background-color: #444; */
+
+	display: flex;
+	width: 100%;
+
+	section.copyright {
+		flex: 1 0 auto;
+	}
+
+	section.social {
+		flex: 1 0 auto;
+	}
 }

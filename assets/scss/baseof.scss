@@ -1,32 +1,14 @@
-body {
-	/* First let's undo the browser's default styles */
-	box-sizing: border-box;
-	margin: 0;
-
-	background-color: var(--color-background);
-	color: var(--color-text);
-
-	font-family: sans-serif ;
-	min-height: 100vh;
-
-	display: flex;
-	flex-direction: column;
-
-}
-
-body > * {
-	flex: 0 0 auto;
-}
-
 main {
 	flex: 1 0 auto;
 	overflow-x: hidden;
-//	overflow-y: scroll;
+	//	overflow-y: scroll;
 	border: 1px solid black;
 	margin: 0 auto;
-//	max-width: 800px;
+	//	max-width: 800px;
 }
 
 pre {
 	padding: 1rem;
 }
+
+

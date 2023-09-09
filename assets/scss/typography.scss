@@ -1,34 +1,67 @@
-@font-face {
-	font-family: 'Expletus Sans';
-	src: url('/fonts/ExpletusSans-Bold.ttf') format('truetype');
+$font-size-base: 20px;
+$line-height-base: 1.5;
+
+html {
+	font-size: $font-size-base;
+	font-family: 'Noto Sans', sans-serif;
+	line-height: $line-height-base;
+
+	// Many thanks to Spencer Mortensen for this technique
+	// https://spencermortensen.com/articles/typographic-scale/
+
+	font-size: clamp(1em, 0.8333vw + 0.775em, 1.25em);
 }
 
-@font-face {
-	font-family: 'Hind';
-	src: url('/fonts/Hind-Regular.ttf') format('truetype');
+h1 {
+	font-family: 'Exo 2';
+	font-weight: 700; /* bold */
+	font-size: 2.5rem;
 }
 
-body {
-	font-family: 'Hind';
-	font-weight: var(--font-weight-base);
-	font-size: var(--base-font-size);
+h2 {
+	font-family: 'Exo 2';
+	font-weight: 700; /* bold */
+	font-size: 2.14159rem;
+}
+
+h3 {
+	font-family: 'Exo 2';
+	font-weight: 700; /* bold */
+	font-size: 1.842rem;
+}
+
+h4 {
+	font-family: 'Exo 2';
+	font-weight: 700; /* bold */
+	font-size: 1.5811rem;
+}
+
+h5 {
+	font-family: 'Exo 2';
+	font-weight: 700; /* bold */
+	font-size: 1.3572rem;
+}
+
+h6 {
+	font-family: 'Exo 2';
+	font-weight: 700; /* bold */
+	font-size: 1.165rem;
+}
+
+small {
+	font-size: 15.4507px;
 }
 
 a {
-	color: var(--color-link);
+	color: $color-link;
 	font-style: normal;
 }
 
 a:visited {
-	color: var(--color-link-visited);
+	color: $color-link-visited;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'Expletus Sans';
-	font-weight: var(--font-weight-heading);
+code {
+	font-family: 'Fira Code', monospace;
+	font-size: 0.9em;
 }

@@ -1,26 +1,27 @@
-// @import 'fonts.scss';
-// @import 'baseof.scss';
-// @import 'typography.scss';
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Hind&display=swap'); */
-:root {
-	--base-font-size: 16px;
-
-	--font-family-base: 'Hind', sans-serif;
-	--font-family-heading: 'Expletus Sans', sans-serif;
-
-	--font-weight-base: 400;
-	--font-weight-heading: 700;
-
-	--color-background: #272e33;
-	--color-text: #d3c6aa;
-	--color-link: #f07;
-	--color-link-visited: #b07;
-}
+$font-size-base: 16px;
 
 $color-background: #272e33;
 $color-text: #d3c6aa;
 $color-link: #f07;
-$color-link-visited: darken($color-link, 50%);
+$color-link-visited: darken($color-link, 10%);
 
+/* First let's undo the browser's default styles */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+
+	background-color: $color-background;
+	color: $color-text;
+
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+}
+
+body > * {
+	flex: 0 0 auto;
+}
