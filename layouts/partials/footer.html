@@ -1,1 +1,22 @@
-&copy; {{ replace .Site.Copyright "{year}" now.Year }}
+<p class="copyright">&copy; {{ replace .Site.Copyright "{year}" now.Year }}</p>
+
+<ul class="social">
+	<!--
+	<li>
+		<a href="{{ .Site.Params.social.twitter }}" target="_blank" rel="noopener">
+			{{ os.ReadFile "/static/logos/twitter.svg" | safeHTML }}
+		</a>
+	</li>
+	-->
+	<li>
+		<a href="{{ .Site.Params.social.github }}" target="_blank" rel="noopener">
+			{{ os.ReadFile "/static/logos/github.svg" | safeHTML }}
+		</a>
+	</li>
+	<li>
+		<a href="{{ .Site.Params.social.linkedin }}" target="_blank" rel="noopener">
+			{{ os.ReadFile "/static/logos/linkedin.svg" | safeHTML }}
+		</a>
+	</li>
+</ul>
+
