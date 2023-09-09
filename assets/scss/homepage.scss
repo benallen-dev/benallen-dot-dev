@@ -27,8 +27,11 @@ div.flexcontainer-vertical {
 
 div.introtext {
 	flex: 1 1 50%;
-	border: 1px solid black;
 	margin: 0px;
 	padding: 1rem;
+
+	@if $debug {
+		border: white solid 1px;
+	}
 }
 

@@ -1,19 +1,25 @@
 div.post {
-	display: flex;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-gap: 2rem;
+	
+	align-items: stretch;
 	width: 100%;
 
-	border: 1px solid white;
+	@if $debug {
+		border: white solid 1px;
+	}
 
 	article {
-		max-width: 70%;
-		margin: 1rem;
-		flex: 1 0 auto;
-		border: white solid	1px;
+		@if $debug {
+			border: white solid 1px;
+		}
 	}
 
 
 	aside {
-		flex: 1 0 auto;
-		border: white solid 1px;
+		@if $debug {
+			border: white solid 1px;
+		}
 	}
 }

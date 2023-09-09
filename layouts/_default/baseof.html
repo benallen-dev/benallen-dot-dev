@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ .Site.Language }}">
-  <head>
-    {{- partial "head.html" . -}}
-    {{- block "customHead" . }}{{- end }}
-  </head>
-  <body>
-    {{- partial "header.html" . -}}
-    {{- block "pre-main" . }}{{- end }}
-    <main>{{- block "main" . }}{{- end }}</main>
-    {{- partial "footer.html" . -}}
-  </body>
+	<head>
+		{{- partial "head.html" . -}} {{- block "customHead" . }}{{- end }}
+	</head>
+	<body>
+		<header>
+			{{- partial "header.html" . -}}
+		</header>
+
+		{{- block "pre-main" . }}{{- end }}
+
+		<main>
+			{{- block "main" . }}{{- end }}
+		</main>
+
+		<footer>
+			{{- partial "footer.html" . -}}
+		</footer>
+	</body>
 </html>

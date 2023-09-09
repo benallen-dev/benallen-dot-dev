@@ -1,17 +1,19 @@
 div.tag-cloud {
 	flex: 1 1 50%;
-	border: 1px solid black;
 	margin: 0px;
 	padding: 1rem;
-}
 
+	@if $debug {
+		border: white solid 1px;
+	}
+}
 
 div.tag {
 	float: left;
 	padding: 0.25rem 0.5rem;
 	margin: 0.25rem;
 	border-radius: 1rem;
-	border: 1px solid $color-text; 
+	border: 1px solid $color-text;
 	text-align: center;
 }
 
