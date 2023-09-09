@@ -25,3 +25,19 @@ body {
 body > * {
 	flex: 0 0 auto;
 }
+
+main {
+	flex: 1 0 auto;
+	overflow-x: hidden;
+	//	overflow-y: scroll;
+	border: 1px solid black;
+	margin: 0 auto;
+	max-width: 1280px;
+	min-width: 320px;
+}
+
+pre {
+	padding: 1rem;
+}
+
+
