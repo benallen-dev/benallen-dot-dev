@@ -23,3 +23,19 @@ div.post {
 		}
 	}
 }
+
+ul.posts-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+	list-style: none;
+	padding: 0;
+
+	gap: 2rem;
+
+	li {
+		@if $debug {
+			border: white solid 1px;
+		}
+	}
+}
