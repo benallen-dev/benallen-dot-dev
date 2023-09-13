@@ -72,14 +72,12 @@ jobs:
       - name: Install SSH key
         run: |
           mkdir ~/.ssh
-          echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
-          chmod 400 ~/.ssh/id_rsa
-      - name: debug - cat id_rsa
-        run: cat ~/.ssh/id_rsa
+          echo $SSH_PRIVATE_KEY > ~/.ssh/github-actions
+          chmod 400 ~/.ssh/github-actions
       - name: Add target to known hosts
         run: ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
       - name: Leave a breadcrumb
-        run: ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa -i ~/.ssh/id_rsa $SSH_USER@$SSH_HOST echo "# Hello from GitHub" > breadcrumb.md 
+        run: ssh -i ~/.ssh/github-actions $SSH_USER@$SSH_HOST echo "# Hello from GitHub" > breadcrumb.md 
       - name: Download build artifact
         uses: actions/download-artifact@v3
       - name: Placeholder but will become SSH copy eventually
