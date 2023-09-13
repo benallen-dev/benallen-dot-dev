@@ -27,56 +27,56 @@ defaults:
     shell: bash
 
 jobs:
-#   # Build job
-#   build:
-#     runs-on: ubuntu-latest
-#     env:
-#       HUGO_VERSION: 0.118.2
-#     steps:
-#       - name: Install Hugo CLI
-#         run: |
-#           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-#           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-#       - name: Install Dart Sass
-#         run: sudo snap install dart-sass
-#       - name: Checkout
-#         uses: actions/checkout@v3
-#         with:
-#           submodules: recursive
-#           fetch-depth: 0
-#       - name: Install Node.js dependencies
-#         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-#       - name: Build with Hugo
-#         env:
-#           # For maximum backward compatibility with Hugo modules
-#           HUGO_ENVIRONMENT: production
-#           HUGO_ENV: production
-#         run: |
-#           hugo \
-#             --gc \
-#             --minify \
-#       - name: Upload artifact
-#         uses: actions/upload-artifact@v3
-#         with:
-#           path: ./public
-
-  # Deployment job
-  deploy:
+  # Build job
+  build:
     runs-on: ubuntu-latest
-      #    needs: build
     env:
-      SSH_USER: ${{ secrets.SSH_USER }}
-      SSH_HOST: ${{ secrets.SSH_HOST }}
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      HUGO_VERSION: 0.118.2
     steps:
-      - name: Install SSH key and leave breadcrumb
+      - name: Install Hugo CLI
         run: |
-          mkdir ~/.ssh
-          echo $SSH_PRIVATE_KEY > ~/.ssh/github-actions
-          chmod 400 ~/.ssh/github-actions
-          ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
-          ssh -i ~/.ssh/github-actions $SSH_USER@$SSH_HOST echo "# Hello from GitHub" > breadcrumb.md 
-      - name: Download build artifact
-        uses: actions/download-artifact@v3
-      - name: Placeholder but will become SSH copy eventually
-        run: echo "placeholder job that doesn\'t do anything yet"
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./public
+
+#   # Deployment job
+#   deploy:
+#     runs-on: ubuntu-latest
+#       #    needs: build
+#     env:
+#       SSH_USER: ${{ secrets.SSH_USER }}
+#       SSH_HOST: ${{ secrets.SSH_HOST }}
+#       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+#     steps:
+#       - name: Install SSH key and leave breadcrumb
+#         run: |
+#           mkdir ~/.ssh
+#           echo $SSH_PRIVATE_KEY > ~/.ssh/github-actions
+#           chmod 400 ~/.ssh/github-actions
+#           ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
+#           ssh -i ~/.ssh/github-actions $SSH_USER@$SSH_HOST echo "# Hello from GitHub" > breadcrumb.md 
+#       - name: Download build artifact
+#         uses: actions/download-artifact@v3
+#       - name: Placeholder but will become SSH copy eventually
+#         run: echo "placeholder job that doesn\'t do anything yet"
