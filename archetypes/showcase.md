@@ -1,7 +1,9 @@
 ---
 title: "{{ replace .Name `-` ` ` | title }}"
 date: {{ .Date }}
-layout: post
+layout: showcase
+url: benallen.ninja/whatever
+tags: 
 draft: true
 ---
 

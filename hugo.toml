@@ -13,6 +13,7 @@ copyright = "{year} benallen.dev"
 [taxonomies]
   category = 'categories'
   tag = 'tags'
+  language = 'languages'
 
 [permalinks]
   articles = "/:year/:month/:slug/"
