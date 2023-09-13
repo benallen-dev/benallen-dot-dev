@@ -69,8 +69,6 @@ jobs:
       SSH_HOST: ${{ secrets.SSH_HOST }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     steps:
-      - name: test if ssh is even installed
-        run: ssh
       - name: Install SSH key
         run: |
           mkdir ~/.ssh
