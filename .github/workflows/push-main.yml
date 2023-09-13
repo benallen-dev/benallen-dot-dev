@@ -74,6 +74,8 @@ jobs:
           mkdir ~/.ssh
           echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
+      - name: debug - cat id_rsa
+        run: cat ~/.ssh/id_rsa
       - name: Add target to known hosts
         run: ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
       - name: Leave a breadcrumb
