@@ -79,7 +79,7 @@ jobs:
       - name: Add target to known hosts
         run: ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
       - name: Leave a breadcrumb
-        run: ssh -i ~/.ssh/id_rsa $SSH_USER@$SSH_HOST echo "# Hello from GitHub" > breadcrumb.md 
+        run: ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa -i ~/.ssh/id_rsa $SSH_USER@$SSH_HOST echo "# Hello from GitHub" > breadcrumb.md 
       - name: Download build artifact
         uses: actions/download-artifact@v3
       - name: Placeholder but will become SSH copy eventually
