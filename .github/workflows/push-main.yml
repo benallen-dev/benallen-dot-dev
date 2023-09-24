@@ -71,7 +71,6 @@ jobs:
       - name: Generate handshake and cURL deployment endpoint
         run: |
           export HANDSHAKE=$(echo -n "$DEPLOY_SECRET$GITHUB_SHA" | openssl sha1 | awk '{print $2}')
-          echo $HANDSHAKE
-          echo -e curl -X PUT $TARGET_SERVER -H "Content-Type: application/json" -d "{ \"handshake\": \"$HANDSHAKE\", \"headsha\": \"$GITHUB_SHA\" }"
+          curl -X PUT $TARGET_SERVER -H "Content-Type: application/json" -d "{ \"handshake\": \"$HANDSHAKE\", \"headsha\": \"$GITHUB_SHA\" }"
 
 
