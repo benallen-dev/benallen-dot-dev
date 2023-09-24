@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Hugo site ~to GitHub Pages~ over SSH
-name: Deploy Hugo site over SSH
+name: Deploy build from main
 
 on:
   # Runs on pushes targeting the default branch
@@ -60,23 +60,21 @@ jobs:
         with:
           path: ./public
 
-#   # Deployment job
-#   deploy:
-#     runs-on: ubuntu-latest
-#       #    needs: build
-#     env:
-#       SSH_USER: ${{ secrets.SSH_USER }}
-#       SSH_HOST: ${{ secrets.SSH_HOST }}
-#       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-#     steps:
-#       - name: Install SSH key and leave breadcrumb
-#         run: |
-#           mkdir ~/.ssh
-#           echo $SSH_PRIVATE_KEY > ~/.ssh/github-actions
-#           chmod 400 ~/.ssh/github-actions
-#           ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
-#           ssh -i ~/.ssh/github-actions $SSH_USER@$SSH_HOST echo "# Hello from GitHub" > breadcrumb.md 
-#       - name: Download build artifact
-#         uses: actions/download-artifact@v3
-#       - name: Placeholder but will become SSH copy eventually
-#         run: echo "placeholder job that doesn\'t do anything yet"
+   # Deployment job
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    env:
+      TARGET_SERVER: ${{ secrets.TARGET_SERVER }}
+      DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}
+    steps:
+      - name: Generate handshake
+        run: |
+          export HANDSHAKE=$(echo -n "$DEPLOY_SECRET$GITHUB_SHA" | openssl sha1 | awk '{print $2}')
+      - name: cURL deployment endpoint
+        run: |
+          curl -X PUT $TARGET_SERVER \
+            -H "Content-Type: application/json" \
+            -d "{ \"handshake\" \"$HANDSHAKE\", \"headsha\": \"$GITHUB_SHA\" }"
+
+
