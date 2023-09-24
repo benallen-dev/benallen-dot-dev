@@ -68,11 +68,10 @@ jobs:
       TARGET_SERVER: ${{ secrets.TARGET_SERVER }}
       DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}
     steps:
-      - name: Generate handshake
+      - name: Generate handshake and cURL deployment endpoint
         run: |
           export HANDSHAKE=$(echo -n "$DEPLOY_SECRET$GITHUB_SHA" | openssl sha1 | awk '{print $2}')
-      - name: cURL deployment endpoint
-        run: |
-          echo -e curl -X PUT $TARGET_SERVER -H "Content-Type: application/json" -d "{ \"handshake\" \"$HANDSHAKE\", \"headsha\": \"$GITHUB_SHA\" }"
+          echo $HANDSHAKE
+          echo -e curl -X PUT $TARGET_SERVER -H "Content-Type: application/json" -d "{ \"handshake\": \"$HANDSHAKE\", \"headsha\": \"$GITHUB_SHA\" }"
 
 
