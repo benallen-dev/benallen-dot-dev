@@ -16,9 +16,10 @@ copyright = "{year} benallen.dev"
   language = 'languages'
 
 [permalinks]
-  articles = "/:year/:month/:slug/"
+  posts = "posts/:year/:month/:slug/"
   page = "/:slug/"
 
 [params]
+  logo = "/link.png"
   social.github = "https://github.com/benallen-dev"
   social.linkedin = "https://www.linkedin.com/in/ben-allen"
