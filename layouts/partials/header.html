@@ -1,3 +1,9 @@
-<img class="logo" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" />
-<a href="/"><h1 class="text-xl">{{ .Site.Title }}</h1></a>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<header class="w-full flex justify-between">
+	<img class="rounded-full h-14 flex-initial" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" />
+	<a class="flex-initial" href="/">
+		<h1 class="text-4xl">{{ .Site.Title }}</h1>
+	</a>
+	<div class="flex-auto">
+		{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+	</div>
+</header>
