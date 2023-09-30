@@ -2,11 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="canonical" href="{{ .Site.BaseURL }}" />
+<link rel="stylesheet" href="styles.css">
 
-{{ $options := dict "transpiler" "dartsass" "targetPath" "index.css" }}
-{{ with resources.Match "scss/**.scss" | resources.Concat "bundle.scss" | resources.ExecuteAsTemplate "bundle.scss" . | toCSS $options | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
 
 {{ with .Page.Params.extraStyleSheet }}
 <link rel="stylesheet" type="text/css" href="/extraStyles/{{ . }}" />
