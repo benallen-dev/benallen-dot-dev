@@ -1,9 +1,15 @@
-<header class="w-full flex justify-between">
-	<img class="rounded-full h-14 flex-initial" src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" />
-	<a class="flex-initial" href="/">
-		<h1 class="text-4xl">{{ .Site.Title }}</h1>
-	</a>
-	<div class="flex-auto">
-		{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<header class="w-full h-16 space-x-4 flex justify-between items-center">
+	<img
+		class="rounded-full max-h-8 flex-initial "
+		src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}"
+		alt="{{ .Site.Title }}"
+	/>
+	<div class="grow">
+		<a href="/">
+			<h1 class="text-4xl">{{ .Site.Title }}</h1>
+		</a>
+	</div>
+	<div class="hidden md:block">
+	{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 	</div>
 </header>
