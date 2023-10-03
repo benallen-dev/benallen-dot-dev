@@ -1,22 +1,20 @@
-<p class="copyright">&copy; {{ replace .Site.Copyright "{year}" now.Year }}</p>
+<footer class="w-full py-4 flex justify-between text-stone-400">
+	<p class="flex-auto">&copy; {{ replace .Site.Copyright "{year}" now.Year }}</p>
 
-<ul class="social">
-	<!--
-	<li>
-		<a href="{{ .Site.Params.social.twitter }}" target="_blank" rel="noopener">
-			{{ os.ReadFile "/static/logos/twitter.svg" | safeHTML }}
-		</a>
-	</li>
-	-->
-	<li>
-		<a href="{{ .Site.Params.social.github }}" target="_blank" rel="noopener">
-			{{ os.ReadFile "/static/logos/github.svg" | safeHTML }}
-		</a>
-	</li>
-	<li>
-		<a href="{{ .Site.Params.social.linkedin }}" target="_blank" rel="noopener">
-			{{ os.ReadFile "/static/logos/linkedin.svg" | safeHTML }}
-		</a>
-	</li>
-</ul>
-
+	<ul class="flex-initial flex flex-row list-none">
+		<li>
+			<a href="{{ .Site.Params.social.github }}" target="_blank" rel="noopener">
+				<div class="h-6 w-6">
+					{{ os.ReadFile "/static/logos/github.svg" | safeHTML }}
+				</div>
+			</a>
+		</li>
+		<li class="pl-2">
+			<a href="{{ .Site.Params.social.linkedin }}" target="_blank" rel="noopener">
+				<div class="h-6 w-6">
+					{{ os.ReadFile "/static/logos/linkedin.svg" | safeHTML }}
+				</div>
+			</a>
+		</li>
+	</ul>
+</footer>

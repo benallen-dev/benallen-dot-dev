@@ -1,7 +1,7 @@
 <div class="tag-cloud">
-    {{ range sort .Site.Taxonomies.tags "Count" "desc" }}
-    <div class="tag">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}
-    </div>
-    {{ end }}
+	{{ range sort .Site.Taxonomies.tags "Count" "desc" }}
+	<div class="tag">
+		<a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}
+	</div>
+	{{ end }}
 </div>
