@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="{{ .Site.Language }}">
-	<head>
-		{{- partial "head.html" . -}} {{- block "customHead" . }}{{- end }}
-	</head>
-	<body class="bg-stone-800 text-stone-100 container mx-auto px-8">
-		{{- partial "header.html" . -}}
 
-		{{- block "pre-main" . }}{{- end }}
+<head>
+	{{- partial "head.html" . -}} {{- block "customHead" . }}{{- end }}
+</head>
 
-		<main>
-			{{- block "main" . }}{{- end }}
-		</main>
+<body class="bg-stone-800 text-stone-100 container mx-auto px-8">
+	{{- partial "header.html" . -}}
 
-		{{- partial "footer.html" . -}}
-	</body>
+	{{- block "pre-main" . }}{{- end }}
+
+	<main>
+		{{- block "main" . }}{{- end }}
+	</main>
+
+	{{- partial "footer.html" . -}}
+</body>
+
 </html>

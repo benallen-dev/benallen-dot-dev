@@ -1,4 +1,4 @@
-<div class="tag-cloud">
+<div>
 	{{ range sort .Site.Taxonomies.tags "Count" "desc" }}
 	<div class="tag">
 		<a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}

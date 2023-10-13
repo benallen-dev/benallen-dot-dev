@@ -1,10 +1,10 @@
 {{ define "pre-main" -}}
-<div class="hero"></div>
+<div></div>
 {{ end }} 
 
 {{ define "main" -}}
-<div class="flexcontainer-horizontal">
-	<div class="introtext">{{ .Content }}</div>
+<div>
+	<div>{{ .Content }}</div>
 	{{- partial "tag-cloud.html" . -}}
 </div>
 
