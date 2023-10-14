@@ -1,6 +1,8 @@
-<header class="w-full h-16 space-x-4 flex justify-between items-center">
+<header
+	class="sticky top-0 w-full h-16 space-x-4 flex justify-between items-center"
+>
 	<img
-		class="rounded-full max-h-8 flex-initial "
+		class="rounded-full max-h-8 flex-initial"
 		src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}"
 		alt="{{ .Site.Title }}"
 	/>
@@ -10,6 +12,6 @@
 		</a>
 	</div>
 	<div class="hidden md:block">
-	{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+		{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 	</div>
 </header>
