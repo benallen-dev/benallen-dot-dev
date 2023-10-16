@@ -1,11 +1,13 @@
 {{ define "main" -}}
 
 <main class="grid auto-rows-auto grid-cols-2 gap-4">
-	<section class="py-24 col-span-2 content-center">
-		<h1 class="text-4xl font-bold">{{ .Title }}</h1>
-		<h2 class="text-2xl font-bold">{{ .Params.subtitle }}</h2>
+	<section class="col-span-2 py-24 text-center">
+		<h1 class="w-full text-4xl font-bold">This is my cool website</h1>
 	</section>
-	<section>{{ .Content }}</section>
+
+	<section class="prose prose-invert prose-blockquote:my-2 prose-blockquote:rounded prose-blockquote:border-l-4 prose-blockquote:border-pink-600 prose-blockquote:bg-stone-700 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-stone-50">
+		{{ .Content }}
+	</section>
 
 	<div>
 		<ul>
