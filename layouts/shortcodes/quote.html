@@ -1,0 +1,4 @@
+<blockquote class="p-4 border-l-4 border-blue-500 bg-stone-700 rounded my-4">
+	<p class="text-l font-semibold">{{ .Inner }}</p>
+	{{ with .Get "author" }}<cite class="block mt-4 text-sm font-medium text-gray-500">{{ . }}</cite>{{ end }}
+</blockquote>

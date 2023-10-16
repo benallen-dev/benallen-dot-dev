@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer base { */
+/* 	ul { */
+/* 		@apply list-disc; */
+/* 	} */
+/* } */
+
