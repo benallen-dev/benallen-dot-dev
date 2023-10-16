@@ -23,3 +23,7 @@ copyright = "{year} benallen.dev"
   logo = "/link.png"
   social.github = "https://github.com/benallen-dev"
   social.linkedin = "https://www.linkedin.com/in/ben-allen"
+
+[markup.goldmark.parser.attribute]
+  block = true
+  title = true
