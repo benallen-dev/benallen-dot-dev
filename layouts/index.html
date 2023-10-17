@@ -1,7 +1,7 @@
 {{ define "main" -}}
-<main class="grid auto-rows-auto grid-cols-3 gap-4 py-12 gap-y-12">
+<main class="grid auto-rows-auto grid-cols-12 gap-4 py-12">
 
-	<section class="hidden md:block">
+	<section class="col-span-4 hidden md:flex justify-center items-center">
 		{{ $img := resources.Get "images/ben-selfie-posterized.png" }}
 		{{ $img120 := $img.Resize "120x" }}
 		{{ $img240 := $img.Resize "240x" }}
@@ -13,13 +13,13 @@
 	</section>
 
 	<section
-		class="prose prose-invert col-span-3 prose-blockquote:my-2 prose-blockquote:rounded prose-blockquote:border-l-4 prose-blockquote:border-pink-600 prose-blockquote:bg-stone-700 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-stone-50 md:col-span-2">
+		class="prose prose-invert col-span-12 my-4 prose-blockquote:my-2 prose-blockquote:rounded prose-blockquote:border-l-4 prose-blockquote:border-pink-600 prose-blockquote:bg-stone-700 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-right prose-blockquote:text-stone-50 md:col-span-8">
 		{{ .Content }}
 	</section>
 
-	{{ range first 3 (where .Site.RegularPages "Section" "posts") }}
-	<div class="block border-stone-200 border rounded p-4">
-		<h4 class="text-lg font-bold pb-4"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+	{{ range first 6 (where .Site.RegularPages "Section" "posts") }}
+	<div class="col-span-12 block rounded border border-stone-500 p-4 md:col-span-6 lg:col-span-4">
+		<h4 class="pb-4 text-lg font-bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
 		<p>{{ .Summary | truncate 100 }}</p>
 	</div>
 	{{ end }}
