@@ -16,12 +16,13 @@ copyright = "{year} benallen.dev"
   language = 'languages'
 
 [permalinks]
-  posts = "posts/:year/:month/:slug/"
-  page = "/:slug/"
+  posts = "posts/:year/:month/:slug"
+  page = "/:slug"
 
 [params]
   social.github = "https://github.com/benallen-dev"
   social.linkedin = "https://www.linkedin.com/in/ben-allen"
+  social.twitter = "https://twitter.com/benallen_dev"
 
 [markup.goldmark.parser.attribute]
   block = true

@@ -10,6 +10,13 @@
 			</a>
 		</li>
 		<li class="pl-2">
+			<a href="{{ .Site.Params.social.twitter }}" target="_blank" rel="noopener">
+				<div class="h-6 w-6">
+					{{ os.ReadFile "/static/logos/twitter.svg" | safeHTML }}
+				</div>
+			</a>
+		</li>
+		<li class="pl-2">
 			<a href="{{ .Site.Params.social.linkedin }}" target="_blank" rel="noopener">
 				<div class="h-6 w-6">
 					{{ os.ReadFile "/static/logos/linkedin.svg" | safeHTML }}
