@@ -1,7 +1,6 @@
 ---
 title: Test A
 date: 2023-09-28T08:28:29+02:00
-layout: post
 ---
 
 # Test file A

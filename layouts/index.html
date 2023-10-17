@@ -1,22 +1,36 @@
 {{ define "main" -}}
+<main class="grid auto-rows-auto grid-cols-3 gap-4 py-12">
 
-<main class="grid auto-rows-auto grid-cols-2 gap-4">
-	<section class="col-span-2 py-24 text-center">
-		<h1 class="w-full text-4xl font-bold">This is my cool website</h1>
+	<section class="hidden md:block">
+		{{ $img := resources.Get "images/ben-selfie-posterized.png" }}
+		{{ $img120 := $img.Resize "120x" }}
+		{{ $img240 := $img.Resize "240x" }}
+		{{ $img430 := $img.Resize "430x" }}
+		<img 
+			class="max-w-sm"
+			src="{{ $img430.RelPermalink }}" 
+			alt="Picture of Ben's face" 
+			srcset="{{ $img120.RelPermalink }} 120w, {{ $img240.RelPermalink }} 240w, {{ $img430.RelPermalink }} 430w" 
+			loading="lazy" 
+			width="100%">
+		</img>
 	</section>
 
-	<section class="prose prose-invert prose-blockquote:my-2 prose-blockquote:rounded prose-blockquote:border-l-4 prose-blockquote:border-pink-600 prose-blockquote:bg-stone-700 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-stone-50">
+	<section
+		class="prose prose-invert col-span-3 md:col-span-2 prose-blockquote:my-2 prose-blockquote:rounded prose-blockquote:border-l-4 prose-blockquote:border-pink-600 prose-blockquote:bg-stone-700 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-stone-50">
 		{{ .Content }}
 	</section>
 
-	<div>
+	<section class="col-span-3">
 		<ul>
-			{{- range .Pages }}
+			{{ range first 5 .Site.RegularPages }}
 			<li>
 				<h6><a href="{{ .Permalink }}">{{ .Title }}</a></h6>
 			</li>
-			{{- end }}
+			{{ end }}
+			
 		</ul>
-	</div>
+	</section>
+
 </main>
 {{- end }}

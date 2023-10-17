@@ -1,7 +1,6 @@
 ---
 title: Test B
 date: 2023-09-29T08:28:29+02:00
-layout: post
 ---
 
 # The Second Test Post

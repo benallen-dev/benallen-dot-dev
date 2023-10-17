@@ -1,7 +1,6 @@
 ---
 title: "Typography"
 date: 2023-09-09T08:28:29+02:00
-layout: post
 draft: true
 ---
 

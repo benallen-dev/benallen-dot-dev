@@ -6,15 +6,18 @@ menu:
     weight: 1
 ---
 
-## My name is Ben. I like computers and such.
+## Computers are pretty great
 
-This started out as a place for me to rant about how much Javascript will ruin your life. But then I realised, things are actually not bad because of JavaScript.
+Also, all the cool kids have one of these, so I built my own hot-take blog.
 
-> Needless complexity is what makes software engineering unpleasant.
+> Whoever first thought that shipping 4MB of JS was a good idea was trying something new and seeing where it went.
+>
+> The people who still think it's OK are just assholes.
+{class="[& p:last-child]:underline"}
 
-Also, all the cool kids have one of these websites, so I want one too. Except I wanted to set a few ground rules.
+This project has a few ground rules to make it interesting:
 
-- I write everything myself
+- The website is static for maximum performance
 - I try at least one tool or technique I don't know yet
 - _No Javascript is run on the client_
 
