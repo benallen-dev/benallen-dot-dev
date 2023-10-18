@@ -24,6 +24,16 @@ copyright = "{year} benallen.dev"
   social.linkedin = "https://www.linkedin.com/in/ben-allen"
   social.twitter = "https://twitter.com/benallen_dev"
 
-[markup.goldmark.parser.attribute]
-  block = true
-  title = true
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = true
+    style = "gruvbox"
+    tabWidth = 4
+  [markup.goldmark.parser.attribute]
+    block = true
+    title = true
