@@ -18,10 +18,11 @@
 	</section>
 
 	{{ range first 6 (where .Site.RegularPages "Section" "posts") }}
-	<div class="col-span-12 block rounded border border-stone-500 p-4 md:col-span-6 lg:col-span-4">
-		<h4 class="pb-4 text-lg font-bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+	<a href="{{ .Permalink }}"
+		class="col-span-12 block rounded border border-stone-500 p-4 md:col-span-6 lg:col-span-4">
+		<h4 class="pb-4 text-lg font-bold">{{ .Title }}</h4>
 		<p>{{ .Summary | truncate 100 }}</p>
-	</div>
+	</a>
 	{{ end }}
 
 
