@@ -1,15 +1,30 @@
 {{ define "main" -}}
-<main>
-	<div class="py-4 text-xl">Hi this is the post layout</div>
-	<article>{{ .Content }}</article>
-	<aside>
+<main class="grid auto-rows-auto grid-cols-12 gap-4 py-4">
+
+	<div class="block md:hidden col-span-12">
+		{{ partial "author.html" . }}
+	</div>
+
+	<header class="col-span-12 md:col-span-9">
+		<h1 class="mt-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
+	</header>
+
+	<article class="prose prose-stone prose-invert col-span-12 max-w-none lg:prose-lg md:col-span-9">
+		{{ .Content }}
+	</article>
+
+	<aside class="col-span-12 md:col-span-3">
+		<div class="hidden md:block">
+			{{ partial "author.html" . }}
+		</div>
 		<section>
 			<h3>Meta</h3>
 			<ul>
-				<li>Series:</li>
-				<li>Tags:</li>
-				<li>Date:</li>
-				<li>Share:</li>
+				<li>Series
+				<li>
+				<li>Tags</li>
+				<li>Date</li>
+				<li>Share</li>
 			</ul>
 		</section>
 		<section>

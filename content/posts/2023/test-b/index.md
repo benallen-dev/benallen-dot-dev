@@ -3,8 +3,6 @@ title: Test B
 date: 2023-09-29T08:28:29+02:00
 ---
 
-# The Second Test Post
-
 ## Arvis scit
 
 Lorem markdownum arces ut comas. Frugis Iove siquis ramis levis caluere

@@ -3,8 +3,6 @@ title: Test C
 date: 2023-10-17T15:52:00+02:00
 ---
 
-# Test file C
-
 ## Arvis scit
 
 Lorem markdownum arces ut comas. Frugis Iove siquis ramis levis caluere
