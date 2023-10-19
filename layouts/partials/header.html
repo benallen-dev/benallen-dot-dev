@@ -4,7 +4,7 @@
 	{{ $img := resources.Get "images/link.png" }}
 	{{ $img := $img.Resize "32x" }}
 	<img
-		class="max-h-8 flex-initial rounded-full"
+		class="max-h-8 flex-initial rounded-full w-8 h-8"
 		src="{{ $img.RelPermalink }}"
 		alt="{{ .Site.Title }}"
 	/>

@@ -20,6 +20,9 @@ copyright = "{year} benallen.dev"
   page = "/:slug"
 
 [params]
+  headers = [
+    ["Cache-Control", "max-age=3600"]
+  ]
   social.github = "https://github.com/benallen-dev"
   social.linkedin = "https://www.linkedin.com/in/ben-allen"
   social.twitter = "https://twitter.com/benallen_dev"
