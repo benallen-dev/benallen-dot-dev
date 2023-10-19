@@ -1,6 +1,7 @@
 ---
 title: Test C
 date: 2023-10-17T15:52:00+02:00
+description: Test post C contains the same content as test posts A and B, but has no tags and a different title.
 ---
 
 ## Arvis scit

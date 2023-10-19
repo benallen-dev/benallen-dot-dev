@@ -1,14 +1,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="{{ .Site.BaseURL }}" />
-<meta name="description" content="{{ .Page.Description }}" />
-<meta name="author" content="{{ .Site.Author.name }}" />
-<meta name="og:title" content="{{ .Page.Title }}" />
-<meta name="og:description" content="{{ .Page.Description }}" />
-<meta name="og:type" content="website" />
-<meta name="og:url" content="{{ .Permalink }}" />
+<meta name="description" content="Author: Ben Allen, Summary: {{ .Page.Summary | truncate 80 }}" />
+<meta property="og:title" content="{{ .Page.Title }}" />
+<meta property="og:description" content="{{ .Page.Params.description }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
 {{- $img := resources.Get "images/ben-selfie-posterized.png" -}}
-<meta name="og:image" content="{{ $img.RelPermalink }}" />
+<meta property="og:image" content="{{ $img.Permalink }}" />
 <link rel="stylesheet" href="/styles.css">
 {{- with .Page.Params.extraStyleSheet }}<link rel="stylesheet" type="text/css" href="/extraStyles/{{ . }}" />{{- end }}
 <title>{{ .Page.Title }}</title>

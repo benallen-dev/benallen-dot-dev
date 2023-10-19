@@ -2,6 +2,7 @@
 title: Test B
 date: 2023-09-29T08:28:29+02:00
 tags: [foo, bar, baz]
+description: Test post B contains the same content as test posts A and C, but has tags and a different title.
 ---
 
 ## Arvis scit
