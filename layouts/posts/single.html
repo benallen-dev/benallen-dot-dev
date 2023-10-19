@@ -3,37 +3,41 @@
 
 	<header class="col-span-12 md:col-span-9 lg:col-span-9">
 		<h1 class="mb-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
+		<div class="h-48 overflow-hidden rounded flex justify-center items-center">
+			<img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full" />
+		</div>
 	</header>
 
-	<aside class="col-span-12 flex justify-start basis-1/2 space-x-4 md:col-span-3 md:row-span-2 md:block md:space-x-0 lg:col-span-3">
-		<section class="grow shrink-0 md:mb-4">
-			<h3 class="text-lg text-stone-500 mb-1">Published</h3>
+	<aside class="col-span-12 flex basis-1/2 justify-start space-x-4 md:col-span-3 md:row-span-2 md:block md:space-x-0 lg:col-span-3">
+		<section class="shrink-0 grow md:mb-4">
+			<h3 class="mb-1 text-lg text-stone-500">Published</h3>
 			{{ partial "author.html" . }}
 		</section>
 
 		<section class="grow md:mb-4">
-			<h3 class="text-lg text-stone-500 mb-1">Tags</h3>
-			<ul>
-				{{ if not .Params.tags }}
-				<li class="inline text-stone-200">No tags</li>
-				{{ end }}
-				{{ range .Params.tags }}
-				<li class="inline pr-1">
-					<a class="text-stone-200 underline" href="/tags/{{ . | urlize }}">{{ . }}</a>
-				</li>
-				{{ end }}
-			</ul>
+			<h3 class="mb-1 text-lg text-stone-500">Tags</h3>
+			{{ partial "tags.html" . }}
 		</section>
 
+		{{ if .Params.attribution }}
+		<section class="grow md:mb-4">
+			<h3 class="mb-1 text-lg text-stone-500">Attribution</h3>
+			<ul>
+			{{ range .Params.attribution }}
+			<li class="prose prose-invert">{{ . | safeHTML }}</li>
+			{{ end }}
+		</section>
+		{{ end }}
+
 		<section class="hidden md:block">
-			<h3 class="text-lg text-stone-500 mb-1">Navigation</h3>
+			<h3 class="mb-1 text-lg text-stone-500">Navigation</h3>
 			<ul>
 				{{ if .Prev }}
-				<li class="float-left"><a class="hover:underline text-sm" href="{{ .Prev.Permalink }}">&lt;&lt; Prev</a></li>
+				<li class="float-left"><a class="text-sm hover:underline" href="{{ .Prev.Permalink }}">&lt;&lt; Prev</a></li>
 				{{ end }}
 
 				{{ if .Next }}
-				<li class="float-right"><a class="hover:underline text-sm" href="{{ .Next.Permalink }}">Next &gt;&gt;</a></li>
+				<li class="float-right"><a class="text-sm hover:underline" href="{{ .Next.Permalink }}">Next &gt;&gt;</a></li>
 				{{ end }}
 			</ul>
 		</section>
@@ -43,7 +47,7 @@
 		{{ .Content }}
 	</article>
 	
-	<section class="col-span-12 md:col-span-9 lg:col-span-9 mt-8 mb-4">
+	<section class="col-span-12 mb-4 mt-8 md:col-span-9 lg:col-span-9">
 		<ul>
 			{{ if .Prev }}
 			<li class="float-left"><a class="underline" href="{{ .Prev.Permalink }}">&lt;&lt; Previous</a></li>

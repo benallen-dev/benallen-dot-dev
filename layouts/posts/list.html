@@ -1,15 +1,50 @@
 {{ define "main" -}}
-<main>
-	<h1>Posts</h1>
-	<ul>
-		{{- $paginator := .Paginate (where .Site.RegularPages "Section" "posts") -}}
-		{{ range $paginator.Pages }}
-		<li>
-			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-			{{ .Summary | truncate 200 }}
-		</li>
-		{{- end }}
-	</ul>
-	{{- partial "pagination.html" . -}}
+<main class="grid auto-rows-auto grid-cols-12 gap-4 py-6">
+
+	<header class="col-span-12">
+		<h1 class="mb-4 text-5xl font-bold text-stone-50">Posts</h1>
+	</header>
+
+	<section class="col-span-12 md:col-span-3">
+		{{- partial "pagination.html" . -}}
+	</section>
+
+	<section class="col-span-12 md:col-span-9">
+		<ul>
+			{{- $paginator := .Paginate (where .Site.RegularPages "Section" "posts") -}}
+			{{ range $paginator.Pages }}
+			<li class="my-4 flex content-stretch justify-start space-x-4 overflow-hidden border border-stone-500 p-4">
+				<div id="image" class="shrink-0 grow-0 basis-36 lg:basis-48">
+					{{ if .Params.image }}
+						{{ $img := resources.Get .Params.image }}
+						{{ with $img }}
+						{{ $img = $img.Resize "200x" }}
+						 <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="w-full" />
+						{{ end }}
+					{{ else }}
+						{{ $img := resources.Get "images/link.png" }}
+						{{ $img = $img.Resize "200x" }}
+						<img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="w-full grayscale" />
+					{{ end }}
+				</div>
+
+				<div class="shrink grow basis-auto overflow-hidden">
+					<h2 class="text-xl font-bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+					{{ .Params.description }}
+
+					<div class="mt-8 flex">
+						<div class="grow md:mb-4">
+							{{ partial "author.html" . }}
+						</div>
+						<div class="grow text-sm md:mb-4">
+							{{ partial "tags.html" . }}
+						</div>
+					</div>
+				</div>
+			</li>
+			{{- end }}
+		</ul>
+	</section>
 </main>
 {{ end }}

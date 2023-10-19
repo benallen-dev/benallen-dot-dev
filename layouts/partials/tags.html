@@ -1,0 +1,10 @@
+<ul>
+	{{ if not .Params.tags }}
+	<li class="inline text-stone-200">No tags</li>
+	{{ end }}
+	{{ range .Params.tags }}
+	<li class="inline pr-1">
+		<a class="text-stone-200 underline" href="/tags/{{ . | urlize }}">{{ . }}</a>
+	</li>
+	{{ end }}
+</ul>
