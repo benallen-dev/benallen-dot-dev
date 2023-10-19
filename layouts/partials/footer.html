@@ -1,7 +1,5 @@
-<footer class="flex w-full justify-between py-4 text-stone-400 border-t border-t-stone-700">
-
-	<p class="flex-auto">&copy; {{ replace .Site.Copyright "{year}" now.Year }}</p>
-
+<footer class="flex w-full justify-between px-1 py-4 text-stone-400 border-t border-t-stone-700">
+	<p class="flex-auto text-sm">&copy; {{ replace .Site.Copyright "{year}" now.Year }}</p>
 	<ul class="flex flex-initial list-none flex-row">
 		<li>
 			<a href="{{ .Site.Params.social.github }}" target="_blank" rel="noopener">

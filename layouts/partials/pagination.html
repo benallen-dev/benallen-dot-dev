@@ -1,0 +1,8 @@
+{{- if gt .Paginator.TotalPages 1 -}}
+    {{ if .Paginator.HasPrev -}}
+        <a class="float-left" href="{{ .Paginator.Prev.URL }}">← Newer Posts</a>
+    {{- end }}
+    {{ if .Paginator.HasNext -}}
+        <a class="float-right" href="{{ .Paginator.Next.URL }}">Older Posts →</a>
+    {{- end }}
+{{ end -}}

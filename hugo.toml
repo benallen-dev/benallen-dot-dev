@@ -3,6 +3,7 @@ languageCode = 'en-us'
 
 title = 'Ben Allen.dev'
 copyright = "{year} benallen.dev"
+paginate = 2 # for now, should probably set it to something sensible later
 
 [imaging]
   anchor = 'Smart'

@@ -1,11 +1,15 @@
 {{ define "main" -}}
-  <h1>List of posts</h1>
-<ul>
-  {{- range .Pages }}
-    <li>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      {{ .Summary | truncate 200 }}
-    </li>
-  {{ end -}}
-</ul>
-{{- end }}
+<main>
+	<h1>Posts</h1>
+	<ul>
+		{{- $paginator := .Paginate (where .Site.RegularPages "Section" "posts") -}}
+		{{ range $paginator.Pages }}
+		<li>
+			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+			{{ .Summary | truncate 200 }}
+		</li>
+		{{- end }}
+	</ul>
+	{{- partial "pagination.html" . -}}
+</main>
+{{ end }}
