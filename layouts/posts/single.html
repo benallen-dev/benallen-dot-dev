@@ -1,39 +1,44 @@
 {{ define "main" -}}
-<main class="grid auto-rows-auto grid-cols-12 gap-4 py-4">
+<main class="grid auto-rows-auto grid-cols-12 gap-4 py-6">
 
-	<div class="block md:hidden col-span-12">
-		{{ partial "author.html" . }}
-	</div>
-
-	<header class="col-span-12 md:col-span-9">
-		<h1 class="mt-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
+	<header class="col-span-12 md:col-span-9 lg:col-span-9">
+		<h1 class="mb-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
 	</header>
 
-	<article class="prose prose-stone prose-invert col-span-12 max-w-none lg:prose-lg md:col-span-9">
+	<aside class="col-span-12 flex justify-start basis-1/2 space-x-4 md:col-span-3 md:row-span-2 md:block md:space-x-0 lg:col-span-3">
+		<section class="grow shrink-0 md:mb-4">
+			<h3 class="text-lg text-stone-500 mb-1">Published</h3>
+			{{ partial "author.html" . }}
+		</section>
+
+		<section class="grow md:mb-4">
+			<h3 class="text-lg text-stone-500 mb-1">Tags</h3>
+			<ul>
+				{{ if not .Params.tags }}
+				<li class="inline text-stone-200">No tags</li>
+				{{ end }}	
+				{{ range .Params.tags }}
+				<li class="inline pr-1"><a class="text-stone-200 underline" href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+				{{ end }}
+			</ul>
+		</section>
+
+	</aside>
+
+	<article class="prose prose-stone prose-invert col-span-12 max-w-none lg:prose-lg md:col-span-9 lg:col-span-9">
 		{{ .Content }}
 	</article>
 
-	<aside class="col-span-12 md:col-span-3">
-		<div class="hidden md:block">
-			{{ partial "author.html" . }}
-		</div>
-		<section>
-			<h3>Meta</h3>
-			<ul>
-				<li>Series
-				<li>
-				<li>Tags</li>
-				<li>Date</li>
-				<li>Share</li>
-			</ul>
-		</section>
-		<section>
-			<h3>Navigation</h3>
-			<ul>
-				<li>Previous</li>
-				<li>Next</li>
-			</ul>
-		</section>
-	</aside>
+	<section class="col-span-12 my-4 md:col-span-9 lg:col-span-9">
+		<ul>
+			{{ if .Prev }}
+			<li class="float-left"><a class="underline" href="{{ .Prev.Permalink }}">Previous</a></li>
+			{{ end }}
+
+			{{ if .Next }}
+			<li class="float-right"><a class="underline" href="{{ .Next.Permalink }}">Next</a></li>
+			{{ end }}
+		</ul>
+	</section>
 </main>
 {{ end }}

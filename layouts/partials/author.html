@@ -1,8 +1,7 @@
-<section class="flex justify-between items-center text-stone-400">
-	<img class="h-14 w-14 rounded-full" src="/images/avatar-square-medium.png" alt="Ben Allen">
-	<div class="font-medium text-right">
-		<div>Ben Allen</div>
-		<div class="text-sm text-gray-500 dark:text-gray-400">{{ .Date.Format "January 2, 2006" }}</div>
+<div class="flex justify-start space-x-4 items-center text-stone-400">
+	<img class="h-10 w-10 rounded-full" src="/images/avatar-square-medium.png" alt="Ben Allen">
+	<div class="font-medium">
+		<p class="text-sm text-gray-500 dark:text-gray-400">{{ .Date.Format "January 2, 2006" }}</p>
 		<p>{{ .Content | countwords | mul 0.005 | math.Ceil }}-minute read</p>
 	</div>
-</section>
+</div>

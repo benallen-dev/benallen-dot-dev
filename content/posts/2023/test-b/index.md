@@ -1,6 +1,7 @@
 ---
 title: Test B
 date: 2023-09-29T08:28:29+02:00
+tags: [foo, bar, baz]
 ---
 
 ## Arvis scit
