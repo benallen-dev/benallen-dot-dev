@@ -68,7 +68,7 @@
 
 	<section class="col-span-12 mb-4 mt-8 lg:col-span-9">
 		<ul>
-			{{ if .Prev }}
+			{{ if and .Prev (eq .Prev.Section "posts") }}
 			<li class="float-left"><a class="underline" href="{{ .Prev.Permalink }}">&lt;&lt; Previous</a></li>
 			{{ end }}
 

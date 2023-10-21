@@ -3,7 +3,9 @@
 
 	<header class="col-span-12">
 		<h1 class="mb-4 text-5xl font-bold text-stone-50">Posts</h1>
-		{{- partial "pagination.html" . -}}
+		<nav>
+			{{- partial "pagination.html" . -}}
+		</nav>
 	</header>
 
 	{{- $paginator := .Paginate (where .Site.RegularPages "Section" "posts") -}}
@@ -43,5 +45,8 @@
 		</a>
 	</div>
 	{{- end }}
+	<nav class="w-full col-span-12">
+		{{ partial "pagination.html" . }}	
+	</nav>
 </main>
 {{ end }}

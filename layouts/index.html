@@ -17,7 +17,7 @@
 		{{ .Content }}
 	</section>
 
-	{{ range first 6 (where .Site.RegularPages "Section" "posts") }}
+	{{ range first 3 (where .Site.RegularPages "Section" "posts") }}
 	<a href="{{ .Permalink }}"
 		class="col-span-12 block rounded border border-stone-500 p-4 md:col-span-6 lg:col-span-4">
 		<h4 class="pb-4 text-lg font-bold">{{ .Title }}</h4>
