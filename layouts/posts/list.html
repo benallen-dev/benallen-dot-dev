@@ -5,33 +5,48 @@
 		<h1 class="mb-4 text-5xl font-bold text-stone-50">Posts</h1>
 	</header>
 
-	<section class="col-span-12 md:col-span-3">
+	<section class="col-span-12 lg:col-span-3">
 		{{- partial "pagination.html" . -}}
 	</section>
 
-	<section class="col-span-12 md:col-span-9">
+	<section class="col-span-12 lg:col-span-9">
 		<ul>
 			{{- $paginator := .Paginate (where .Site.RegularPages "Section" "posts") -}}
 			{{ range $paginator.Pages }}
-			<li class="my-4 flex content-stretch justify-start space-x-4 overflow-hidden border border-stone-500 p-4">
-				<div id="image" class="shrink-0 grow-0 basis-36 lg:basis-48">
-					{{ $img := .Resources.GetMatch "banner" | default (resources.Get "images/link.png") }}
-					{{ $img := $img.Resize "200x" }}
-					<img src="{{ $img.RelPermalink }}" alt="{{ .Title }} banner image" class="h-full" />
-				</div>
+			<li class="my-4 overflow-hidden border md:border-0 border-stone-500">
 
-				<div class="shrink grow basis-auto overflow-hidden">
-					<h2 class="text-xl font-bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				<div class="md:flex space-x-4">
+					<div class="md:shrink-0">
+						{{ $img := .Resources.GetMatch "banner" | default (resources.Get "images/link-missing.png") }}
+						{{ $img200 := $img.Resize "200x" }}
+						{{ $img400 := $img.Resize "400x" }}
+						{{ $img600 := $img.Resize "600x" }}
+						<a href="{{ .Permalink }}">
+							<img
+								src="{{ $img600.RelPermalink }}"
+								alt="{{ .Title }} banner image"
+								class="h-32 w-full object-cover md:h-full md:w-32 lg:w-48 lg:h-32"
+								srcset="{{ $img200.RelPermalink }} 200w, {{ $img400.RelPermalink }} 400w, {{ $img600.RelPermalink }} 600w"
+							/>
+						</a>
+					</div>
 
-					{{ .Params.description }}
+					<div class="overflow-hidden py-5 md:py-0">
 
-					<div class="mt-8 flex">
-						<div class="grow md:mb-4">
-							{{ partial "author.html" . }}
-						</div>
-						<div class="grow text-sm md:mb-4">
-							{{ partial "tags.html" . }}
-						</div>
+						<a href="{{ .Permalink }}">
+							<h2 class="text-xl font-bold">{{ .Title }}</h2>
+
+							{{ .Params.description }}
+
+							<div class="mt-8 flex">
+								<div class="grow md:mb-4">
+									{{ partial "author.html" . }}
+								</div>
+								<div class="grow text-sm md:mb-4">
+									{{ partial "tags.html" . }}
+								</div>
+							</div>
+						</a>
 					</div>
 				</div>
 			</li>
