@@ -1,7 +1,6 @@
 {{ define "main" -}}
-<main class="grid auto-rows-auto grid-cols-12 gap-4 py-6">
-
-	<header class="col-span-12 md:col-span-9 lg:col-span-9">
+<main class="grid auto-rows-auto grid-cols-12 gap-6 py-6">
+	<header class="col-span-12 lg:col-span-9">
 		<h1 class="mb-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
 		<div class="flex h-48 items-center justify-center overflow-hidden rounded">
 			<img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full" />
@@ -9,29 +8,42 @@
 	</header>
 
 	<aside
-		class="col-span-12 flex basis-1/2 justify-start space-x-4 pl-4 md:col-span-3 md:row-span-2 md:block md:space-x-0 lg:col-span-3">
-		<section class="shrink-0 grow md:mb-4">
+		class="col-span-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:row-span-2 lg:block lg:grid-cols-1 lg:col-span-3">
+		<section>
 			<h3 class="mb-1 text-lg text-stone-500">Published</h3>
 			{{ partial "author.html" . }}
 		</section>
 
-		<section class="grow md:mb-4">
-			<h3 class="mb-1 text-lg text-stone-500">Tags</h3>
+		{{ if .Params.tags }}
+		<section>
+			<h3 class="text-lg text-stone-500">Tags</h3>
 			{{ partial "tags.html" . }}
 		</section>
+		{{ end }}
 
 		{{ if .Params.attribution }}
-		<section class="grow md:mb-4">
+		<section>
 			<h3 class="mb-1 text-lg text-stone-500">Attribution</h3>
 			<ul>
 				{{ range .Params.attribution }}
-				<li class="prose prose-invert mb-2 last:mb-0">{{ . | safeHTML }}</li>
+				<li class="text-sm prose prose-invert mb-2 last:mb-0">{{ . | safeHTML }}</li>
 				{{ end }}
 			</ul>
 		</section>
 		{{ end }}
 
-		<section class="hidden md:block">
+		{{ if .Params.references }}
+		<section>
+			<h3 class="mb-1 text-lg text-stone-500">References</h3>
+			<ul>
+				{{ range .Params.references }}
+				<li class="text-sm prose prose-invert mb-2 last:mb-0">{{ . | safeHTML }}</li>
+				{{ end }}
+			</ul>
+		</section>
+		{{ end }}
+
+		<section class="hidden lg:block">
 			<h3 class="mb-1 text-lg text-stone-500">Navigation</h3>
 			<ul>
 				{{ if .Prev }}
@@ -47,11 +59,11 @@
 		</section>
 	</aside>
 
-	<article class="prose prose-stone prose-invert col-span-12 max-w-none lg:prose-lg md:col-span-9 lg:col-span-9">
+	<article class="prose prose-stone prose-invert col-span-12 max-w-none lg:prose-lg lg:col-span-9">
 		{{ .Content }}
 	</article>
 
-	<section class="col-span-12 mb-4 mt-8 md:col-span-9 lg:col-span-9">
+	<section class="col-span-12 mb-4 mt-8 lg:col-span-9">
 		<ul>
 			{{ if .Prev }}
 			<li class="float-left"><a class="underline" href="{{ .Prev.Permalink }}">&lt;&lt; Previous</a></li>
