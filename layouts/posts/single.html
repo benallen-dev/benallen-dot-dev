@@ -2,9 +2,12 @@
 <main class="grid auto-rows-auto grid-cols-12 gap-6 py-6">
 	<header class="col-span-12 lg:col-span-9">
 		<h1 class="mb-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
+		{{ with .Resources.GetMatch "banner" }}
+		{{ $img := .Resize "800x" }}
 		<div class="flex h-48 items-center justify-center overflow-hidden rounded">
-			<img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full" />
+			<img src="{{ $img.RelPermalink }}" alt="{{ .Title }} banner image" class="w-full" />
 		</div>
+		{{ end }}
 	</header>
 
 	<aside

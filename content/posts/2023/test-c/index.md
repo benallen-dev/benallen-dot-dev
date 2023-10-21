@@ -2,11 +2,12 @@
 title: Test C
 date: 2023-10-17T15:52:00+02:00
 description: Test post C contains the same content as test posts A and B, but has no tags and a different title.
-image: https://images.unsplash.com/photo-1438786657495-640937046d18?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-attribution: [
-    'Photo by <a href="https://unsplash.com/@claudelrheault?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Claudel Rheault</a> on <a href="https://unsplash.com/photos/mountain-covered-with-green-grass-ZVbv1akA-l4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
-    'foo bar baz'
-]
+attribution:
+  - Photo by <a target="_blank" href="https://unsplash.com/@claudelrheault?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Claudel Rheault</a> on <a target="_blank" href="https://unsplash.com/photos/mountain-covered-with-green-grass-ZVbv1akA-l4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  - foo bar baz
+resources:
+  - name: banner
+    src: claudel-rheault-ZVbv1akA-l4-unsplash.jpg
 ---
 
 ## Arvis scit

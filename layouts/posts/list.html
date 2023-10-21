@@ -15,17 +15,9 @@
 			{{ range $paginator.Pages }}
 			<li class="my-4 flex content-stretch justify-start space-x-4 overflow-hidden border border-stone-500 p-4">
 				<div id="image" class="shrink-0 grow-0 basis-36 lg:basis-48">
-					{{ if .Params.image }}
-						{{ $img := resources.Get .Params.image }}
-						{{ with $img }}
-						{{ $img = $img.Resize "200x" }}
-						 <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="w-full" />
-						{{ end }}
-					{{ else }}
-						{{ $img := resources.Get "images/link.png" }}
-						{{ $img = $img.Resize "200x" }}
-						<img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="w-full grayscale" />
-					{{ end }}
+					{{ $img := .Resources.GetMatch "banner" | default (resources.Get "images/link.png") }}
+					{{ $img := $img.Resize "200x" }}
+					<img src="{{ $img.RelPermalink }}" alt="{{ .Title }} banner image" class="h-full" />
 				</div>
 
 				<div class="shrink grow basis-auto overflow-hidden">
