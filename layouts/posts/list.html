@@ -9,34 +9,37 @@
 	{{- $paginator := .Paginate (where .Site.RegularPages "Section" "posts") -}}
 	{{ range $paginator.Pages }}
 	<div class="col-span-12 lg:col-span-4 overflow-hidden border border-stone-500">
-
-		<div class="h-full flex flex-col">
-			<div>
-				{{ $img := .Resources.GetMatch "banner" | default (resources.Get "images/link-missing.png") }}
-				{{ $img200 := $img.Resize "200x" }}
-				{{ $img400 := $img.Resize "400x" }}
-				{{ $img600 := $img.Resize "600x" }}
-				<img src="{{ $img600.RelPermalink }}" alt="{{ .Title }} banner image" class="h-32 w-full object-cover md:h-24 transition-all"
-					srcset="{{ $img200.RelPermalink }} 200w, {{ $img400.RelPermalink }} 400w, {{ $img600.RelPermalink }} 600w" />
-			</div>
-
-			<div class="grow flex flex-col justify-between overflow-hidden p-4">
+		<a href="{{ .Permalink }}">
+			<div class="h-full flex flex-col">
+				
 				<div>
-					<h2 class="text-xl font-bold">{{ .Title }}</h2>
-
-					{{ .Params.description }}
+					{{ $img := .Resources.GetMatch "banner" | default (resources.Get "images/link-missing.png") }}
+					{{ $img200 := $img.Resize "200x" }}
+					{{ $img400 := $img.Resize "400x" }}
+					{{ $img600 := $img.Resize "600x" }}
+					<img src="{{ $img600.RelPermalink }}" alt="{{ .Title }} banner image"
+						class="h-32 w-full object-cover md:h-24 transition-all"
+						srcset="{{ $img200.RelPermalink }} 200w, {{ $img400.RelPermalink }} 400w, {{ $img600.RelPermalink }} 600w" />
 				</div>
 
-				<div class="mt-6 flex justify-between">
-					<div class="text-sm">
-						{{ partial "author.html" . }}
+				<div class="grow flex flex-col justify-between overflow-hidden p-4">
+					<div>
+						<h2 class="text-xl font-bold">{{ .Title }}</h2>
+
+						{{ .Params.description }}
 					</div>
-					<div class="text-sm w-1/3">
-						{{ partial "tags.html" . }}
+
+					<div class="mt-6 flex justify-between">
+						<div class="text-sm">
+							{{ partial "author.html" . }}
+						</div>
+						<div class="text-sm w-1/3">
+							{{ partial "tags.html" . }}
+						</div>
 					</div>
 				</div>
+
 			</div>
-		</div>
 		</a>
 	</div>
 	{{- end }}
