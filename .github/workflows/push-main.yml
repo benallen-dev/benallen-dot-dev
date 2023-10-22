@@ -37,15 +37,23 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 #      - name: Install Dart Sass
 #        run: sudo snap install dart-sass
+      - name: install PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Build Tailwind CSS
-        run: "npm run build"
+      - name: Install NPM dependencies
+        run: pnpm i
+      - name: Tailwind build
+        run: pnpm build
+      # - name: Install Node.js dependencies
+      #   run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      # - name: Build Tailwind CSS
+      #   run: "npm run build"
       - name: Build static site with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
