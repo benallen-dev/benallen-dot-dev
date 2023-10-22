@@ -1,0 +1,17 @@
+{{ $attributions := slice }}
+
+<ul>
+{{ range .Site.RegularPages }}
+    {{ if isset .Params "attribution" }}
+	<li>
+
+		<h2 class="text-lg text-stone-300"><span class="font-bold">{{ .Title }}</span><span class="pl-8 text-sm font-light text-gray-500">{{ .Date.Format "January 2, 2006" }}</span></h2>
+		<ul>
+			{{ range .Params.attribution }}
+			<li class="prose prose-stone prose-invert pl-8">{{ . | safeHTML }}</li>
+			{{ end }}
+		</ul>
+	</li>
+	{{ end }}
+{{ end }}
+</ul>
