@@ -1,7 +1,0 @@
-<div>
-	{{ range sort .Site.Taxonomies.tags "Count" "desc" }}
-	<div>
-		<a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}
-	</div>
-	{{ end }}
-</div>

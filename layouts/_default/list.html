@@ -1,9 +1,18 @@
 {{ define "main" -}}
-  <h1>List (default)</h1>
-  {{- range .Pages }}
-    <li>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      {{ .Summary | truncate 200 }}
-    </li>
-  {{ end -}}
-{{- end }}
+<main class="grid auto-rows-auto grid-cols-12 gap-4 py-6">
+
+	<header class="col-span-12">
+		<h1 class="mb-4 text-5xl font-bold text-stone-50">Posts tagged '{{ .Title }}'</h1>
+	</header>
+
+	{{ range .Pages }}
+		<div class="col-span-12 overflow-hidden border border-stone-500 lg:col-span-4">
+		{{ partial "post-card.html" . }}
+		</div>
+	{{- end }}
+
+	<nav class="col-span-12 w-full">
+		{{ partial "pagination.html" . }}
+	</nav>
+</main>
+{{ end }}

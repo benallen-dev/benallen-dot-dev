@@ -1,7 +1,7 @@
 {{ define "main" -}}
 <main class="grid auto-rows-auto grid-cols-12 gap-4 py-12">
 
-	<section class="col-span-4 hidden md:flex justify-center items-center">
+	<section class="col-span-4 hidden items-center justify-center md:flex">
 		{{ $img := resources.Get "images/ben-selfie-posterized.png" }}
 		{{ $img120 := $img.Resize "120x" }}
 		{{ $img240 := $img.Resize "240x" }}
@@ -18,13 +18,10 @@
 	</section>
 
 	{{ range first 3 (where .Site.RegularPages "Section" "posts") }}
-	<a href="{{ .Permalink }}"
-		class="col-span-12 block rounded border border-stone-500 p-4 md:col-span-6 lg:col-span-4">
-		<h4 class="pb-4 text-lg font-bold">{{ .Title }}</h4>
-		<p>{{ .Summary | truncate 100 }}</p>
-	</a>
+	<div class="col-span-12 overflow-hidden border border-stone-500 md:col-span-4">
+		{{ partial "post-card.html" . }}
+	</div>
 	{{ end }}
-
 
 </main>
 {{- end }}

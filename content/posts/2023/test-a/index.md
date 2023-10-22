@@ -2,6 +2,8 @@
 title: Test A
 date: 2023-09-28T08:28:29+02:00
 description: Test post A contains the same content as test posts A and B, has no tags and is the OG test file.
+tags:
+  - 'foo'
 ---
 
 ## Arvis scit
