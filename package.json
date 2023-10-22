@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"build": "npm run tailwindcss -i ./tailwind.css -o ./static/styles.css",
+		"build": "npx tailwindcss -i ./tailwind.css -o ./static/styles.css",
 		"watch": "npx tailwindcss -i ./tailwind.css -o ./static/styles.css --watch"
 	},
 	"devDependencies": {
