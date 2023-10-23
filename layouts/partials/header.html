@@ -2,10 +2,12 @@
 	class="top-0 flex h-16 w-full items-center justify-between space-x-4 border-b border-b-stone-700 bg-stone-800 md:sticky"
 >
 	{{ $img := resources.Get "images/link.png" }}
-	{{ $img := $img.Resize "32x" }}
+	{{ $img32 := $img.Resize "32x webp" }}
+	{{ $img64 := $img.Resize "64x webp" }}
 	<img
 		class="h-8 max-h-8 w-8 flex-initial rounded-full"
-		src="{{ $img.RelPermalink }}"
+		src="{{ $img64.RelPermalink }}"
+		srcset="{{ $img32.RelPermalink }} 32w, {{ $img64.RelPermalink }} 64w"
 		alt="{{ .Site.Title }}"
 	/>
 	<div class="grow">

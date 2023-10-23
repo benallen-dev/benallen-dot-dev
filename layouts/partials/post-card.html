@@ -3,9 +3,9 @@
 
 		<div>
 			{{ $img := .Resources.GetMatch "banner" | default (resources.Get "images/link-missing.png") }}
-			{{ $img200 := $img.Resize "200x" }}
-			{{ $img400 := $img.Resize "400x" }}
-			{{ $img600 := $img.Resize "600x" }}
+			{{ $img200 := $img.Resize "200x webp" }}
+			{{ $img400 := $img.Resize "400x webp" }}
+			{{ $img600 := $img.Resize "600x webp" }}
 			<img src="{{ $img600.RelPermalink }}" alt="{{ .Title }} banner image"
 				class="h-32 w-full object-cover transition-all md:h-24"
 				srcset="{{ $img200.RelPermalink }} 200w, {{ $img400.RelPermalink }} 400w, {{ $img600.RelPermalink }} 600w" />

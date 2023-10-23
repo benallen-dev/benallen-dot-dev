@@ -3,9 +3,15 @@
 	<header class="col-span-12 lg:col-span-9">
 		<h1 class="mb-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
 		{{ with .Resources.GetMatch "banner" }}
-		{{ $img := .Resize "800x" }}
+		{{ $img800 := .Resize "800x webp" }}
+		{{ $img1400 := .Resize "1400x webp" }}
 		<div class="flex h-48 items-center justify-center overflow-hidden rounded">
-			<img src="{{ $img.RelPermalink }}" alt="{{ .Title }} banner image" class="w-full" />
+			<img 
+				class="w-full" 
+				src="{{ $img800.RelPermalink }}" 
+				srcset="{{ $img800.RelPermalink }} 800w, {{ $img1400.RelPermalink }} 1400w"
+				alt="{{ .Title }} banner image" 
+			/>
 		</div>
 		{{ end }}
 	</header>
@@ -13,20 +19,20 @@
 	<aside
 		class="col-span-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-3 lg:row-span-2 lg:block lg:grid-cols-1">
 		<section>
-			<h3 class="mb-1 text-lg text-stone-500">Published</h3>
+			<h2 class="mb-1 text-lg text-stone-500">Published</h3>
 			{{ partial "author.html" . }}
 		</section>
 
 		{{ if .Params.tags }}
 		<section class="sm:mt-4">
-			<h3 class="text-lg text-stone-500">Tags</h3>
+			<h2 class="text-lg text-stone-500">Tags</h3>
 			{{ partial "tags.html" . }}
 		</section>
 		{{ end }}
 
 		{{ if .Params.attribution }}
 		<section class="sm:mt-4">
-			<h3 class="mb-1 text-lg text-stone-500">Attribution</h3>
+			<h2 class="mb-1 text-lg text-stone-500">Attribution</h3>
 			<ul>
 				{{ range .Params.attribution }}
 				<li class="prose prose-invert mb-2 text-sm last:mb-0">{{ . | safeHTML }}</li>
@@ -37,7 +43,7 @@
 
 		{{ if .Params.references }}
 		<section class="sm:mt-4">
-			<h3 class="mb-1 text-lg text-stone-500">References</h3>
+			<h2 class="mb-1 text-lg text-stone-500">References</h3>
 			<ul>
 				{{ range .Params.references }}
 				<li class="prose prose-invert mb-2 text-sm last:mb-0">{{ . | safeHTML }}</li>
@@ -47,7 +53,7 @@
 		{{ end }}
 
 		<section class="hidden lg:mt-4 lg:block">
-			<h3 class="mb-1 text-lg text-stone-500">Navigation</h3>
+			<h2 class="mb-1 text-lg text-stone-500">Navigation</h3>
 			<ul>
 				{{ if and .Prev (eq .Prev.Section "posts") }}
 				<li class="float-left"><a class="text-sm hover:underline" href="{{ .Prev.Permalink }}">&lt;&lt; Prev</a>
