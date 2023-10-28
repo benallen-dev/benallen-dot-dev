@@ -15,6 +15,8 @@ Also, all the cool kids have one of these, so I built my own hot-take blog.
 > The people who still think it's OK are just assholes.
 {class="[& p:last-child]:underline"}
 
+By the way I use the term "engineer" and "developer" interchangeably because it doesn't matter.
+
 This project has a few ground rules to make it interesting:
 
 - The website is static for maximum performance
