@@ -3,11 +3,13 @@ module.exports = {
 	content: ["./content/**/*.md", "./layouts/**/*.html"],
 	theme: {
 		extend: {
-			typography: {
+			typography: (theme) => ({
 				DEFAULT: {
 					css: {
 						code: {
 							padding: '.2em .4em',
+							backgroundColor: theme('colors.stone.950'),
+							borderRadius: theme('borderRadius.DEFAULT'),
 						},
 						'code::before': {
 							content: '""',
@@ -17,7 +19,7 @@ module.exports = {
 						},
 					},
 				},
-			},
+			}),
 		},
 	},
 	plugins: [
