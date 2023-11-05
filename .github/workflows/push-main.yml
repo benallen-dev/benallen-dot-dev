@@ -1,10 +1,10 @@
-name: Deploy build from main
+name: Publish from main
 
 on:
   # Runs on pushes targeting the default branch
-#  push:
-#    branches:
-#      - main
+  push:
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,8 +35,6 @@ jobs:
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-#      - name: Install Dart Sass
-#        run: sudo snap install dart-sass
       - name: install PNPM
         uses: pnpm/action-setup@v2
         with:
@@ -50,10 +48,6 @@ jobs:
         run: pnpm i
       - name: Tailwind build
         run: pnpm build
-      # - name: Install Node.js dependencies
-      #   run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      # - name: Build Tailwind CSS
-      #   run: "npm run build"
       - name: Build static site with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
