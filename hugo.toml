@@ -1,7 +1,7 @@
 baseURL = 'https://benallen.dev'
 languageCode = 'en-us'
 
-title = 'Ben Allen.dev'
+title = 'BenAllen.dev'
 copyright = "{year} benallen.dev"
 paginate = 2 # for now, should probably set it to something sensible later
 
