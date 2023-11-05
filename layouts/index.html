@@ -3,9 +3,9 @@
 
 	<section class="col-span-4 hidden items-center justify-center md:flex">
 		{{ $img := resources.Get "images/ben-selfie-posterized.png" }}
-		{{ $img120 := $img.Resize "120x" }}
-		{{ $img240 := $img.Resize "240x" }}
-		{{ $img430 := $img.Resize "430x" }}
+		{{ $img120 := $img.Resize "120x webp"}}
+		{{ $img240 := $img.Resize "240x webp"}}
+		{{ $img430 := $img.Resize "430x webp"}}
 		<img class="max-w-sm" src="{{ $img430.RelPermalink }}" alt="Picture of Ben's face"
 			srcset="{{ $img120.RelPermalink }} 120w, {{ $img240.RelPermalink }} 240w, {{ $img430.RelPermalink }} 430w"
 			loading="lazy" width="100%">

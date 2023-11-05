@@ -2,6 +2,8 @@
 title: "Shitposting shouldn't be this complicated"
 date: 2023-11-05T12:22:35+01:00
 description: I built a website so I could publish stuff, and then I didn't publish anything.
+tags:
+  - shitpost
 resources:
   - name: banner
     src: yoda.jpg
