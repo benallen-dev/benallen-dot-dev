@@ -1,5 +1,5 @@
 ---
-title: I am a -10x engineer on purpose
+title: I am a -10x engineer (on purpose)
 date: 2023-10-28T10:04:02+02:00
 description: When you only build requested features, you're skipping a crucial aspect of software engineering.
 resources:
@@ -12,23 +12,19 @@ references:
 draft: true
 ---
 
-## Ok, so hear me out
+## Wait, what?
 
-In a world where all the cool kids are striving to become ultra-productive 10x engineers, I think sometimes that's not the best thing you can do. In fact, sometimes the correct move is to slow down, think for a minute, and then cost your employer months of developer time in the pursuit of longer-term improvements. 
+It seems like all the _cool_ kids are striving to become ultra-productive 10x engineers. This is a great goal, but a part that I feel is missing from the discourse on the subject is that sometimes environmental factors don't really allow for the freedom that's needed to get entire teams functioning at that level. If this is the case, it's time to slow down, think for a minute, and then cost your employer months of developer time in the pursuit of longer-term improvements and a culture of quality engineering.
 
-Being a 10x developer garners you the respect of your colleagues, the admiration of management, and even a Lambo if you're crazy enough to use PHP, but being a -10x developer makes the lives of all of your colleagues (and you) better, and provides greater benefits to the company you work for over the longer term.
+Those improvements are costly at first, but will lead to happier engineers and stakeholders, better communication, better software, and more satisfied customers/users.
 
-## Wait, what the hell is a -10x developer?
-
-See [How to be a -10x Engineer](https://taylor.town/-10x) by [Taylor](https://taylor.town). I don't know their last name, so for the sake of the narrative I'm going to assume it's Taylor Swift because I enjoy things that make absolutely no sense.
-
-If you're more the visual type, here's a video of ThePrimeagen commenting on the article:
+This idea of being a -10x developer was inspired by [How to be a -10x Engineer](https://taylor.town/-10x) by [Taylor](https://taylor.town). I don't know their last name, so for the sake of the narrative I'm going to assume it's Taylor Swift because I enjoy things that are objectively stupid. If you're more the visual type, here's a video of ThePrimeagen commenting on the article:
 
 {{< youtube pHJmmTivG1k >}}
 
-Obviously the above is a farcical take, and I'm not suggesting that you go out and start wasting everybody's time. Plenty of engineers manage this all on their own without even trying, and we don't actually need folks going out and doing it on purpose. What I _am_ advocating for is that if your organisation isn't a tech-first startup, you might need to deprioritise short-term goals in favour of medium-term improvements.
+Obviously I'm not suggesting that you go out and start wasting everybody's time, plenty of engineers manage this all on their own without even trying, and we don't actually need folks going out and doing it on purpose. What I _am_ advocating for is that if your organisation isn't a tech-first startup there's a good chance the engineering teams are stuck in sort of learned helplessness because their backlogs are always overflowing.
 
-## Let's define how to be a -10x engineer
+## How I do -10x engineering
 
 ### Enable others' curiosity
 {.my-0}
@@ -67,3 +63,9 @@ I think we can all agree 100% coverage is stupid. I think we can also agree that
 It doesn't even matter if code is unit or end-to-end tested, but a team writing vanilla JS with no unit tests is going to have bugs with 100% certainty. The worst part is that they likely don't even know most of their bugs and rely on user reports and their ticket backlog to track what issues they have. This is great for initial delivery, but the problem arises when things go wrong, _especially_ if other teams rely on their code. You end up `git bisect`-ing to find the commit and then triaging instead of having half a chance of catching the bug before you ship it.
 
 More often than not teams that do this mention speed as the reason, unit tests take ages to write and cause maintenance, using types slows us down, you've heard it all before. Underneath I suspect they know they've created an expectation of slapping things together in a matter of days and now don't want to offend management by saying "and now we're going to do things that seems useless for a month". By making a point of expecting _some_ tests as a matter of principle they can now point to you as the reason they feel they have to write tests, and while you explain to the manager why testing is important they could actually be writing those tests.
+
+## Why is this important?
+
+If your company is not primarily a tech company, but like almost all companies today they rely on software to get things done, your job as a software engineer is not only to build that software. Your job is also to educate your stakeholders on why it's important to have good requirements. It's your job to know which tool to use to provide them with the value you're getting paid to provide. It's your job to provide solutions to the actual problem, not just to blindly build what stakeholders _think_ will solve whatever problem they're facing.
+
+You're the software engineer, so it's _your_ job to figure out how to solve their problem. And you can't do that if you've only ever used React, or Java. You can't do that if you're so swamped with must-do's and deadlines that all that's left to do is churn out prototype features the whole time. And you sure as hell can't do that if you're spending all your time trying to figure out the spaghetti you wrote last week.
