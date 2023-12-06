@@ -56,7 +56,7 @@ Except in the real world, software development is a lot like magic. The people d
 
 Even worse, maybe someone wrote a test, but it isn't a _good_ test. Testing is hard! I get it! But the test doesn't cover an edge case that actually happens a lot and didn't break before because you got lucky. Now you've broken it, not detected it, and because everything gets deployed to production, your users are going to be first in line to get a taste of your failure. Ouch.
 
-## The worst part is, it's your fault
+## The worst part is it's your fault
 
 The basic tenet of test-driven + trunk-based development is "If your tests pass it can be deployed without issue", which is great until your junior dev comes along and breaks everything at 16:55 on a Friday, because they changed the test, committed everything before the weekend (as they should), and went home.
 
@@ -64,7 +64,7 @@ And it's your fault, because you let a junior dev push to production on Friday a
 
 ## I'm not salty, you're salty!
 
-Yeah I'm salty, because I have yet to see TDD actually work in the wild, but I've seen plenty of self-proclaimed "software architects" push for the idea. They obviously haven't ever written any code for production, or they'd know that real-world software development is not sped up by more procedures and processes, but by getting the hell out of the way and letting people work.
+Yeah I'm salty! I have yet to see TDD actually work in the wild, but I've seen plenty of self-proclaimed "software architects" push for the idea. They obviously haven't ever written any code for production, or they'd know that real-world software development is not sped up by forcing teams into using a particular workflow or adding more procedures to their day, but by getting the hell out of the way and letting people work.
 
-As such, if you come and talk to my team, and you're telling us that moving to TDD and only working trunk-based is a great idea, I immediately write you off as a moron and you're going to have to work incredibly hard to earn that trust back. I have better things to do with my time that deliver more value.
+As such, if you come and talk to my team, and you're telling us that moving to TDD and only working trunk-based is a great idea with zero downsides, I immediately write you off as a moron and you're going to have to work incredibly hard to earn that trust back. I have better things to do with my time that deliver more value.
 
