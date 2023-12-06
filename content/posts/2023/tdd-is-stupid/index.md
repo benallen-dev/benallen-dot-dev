@@ -58,10 +58,9 @@ Even worse, maybe someone wrote a test, but it isn't a _good_ test. Testing is h
 
 ## The worst part is, it's your fault
 
-The basic tenet of TDD+trunk-based is "If your tests pass it can be deployed without issue", which is great until your junior dev comes along and breaks everything at 16:55 on a Friday, because they changed the test, committed everything before the weekend (as they should), and went home.
+The basic tenet of test-driven + trunk-based development is "If your tests pass it can be deployed without issue", which is great until your junior dev comes along and breaks everything at 16:55 on a Friday, because they changed the test, committed everything before the weekend (as they should), and went home.
 
 And it's your fault, because you let a junior dev push to production on Friday afternoon.
-
 
 ## I'm not salty, you're salty!
 
