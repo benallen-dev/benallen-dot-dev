@@ -8,12 +8,7 @@ tags:
   - shit sandwich
 resources:
   - name: banner
-    src: filename relative to index.md for banner image (optional)
-attribution:
-  - Add image or other credits here (optional)
-references:
-  - Add references to other content here (optional)
-draft: true
+    src: walter.jpg
 ---
 
 Straight up, saying TDD is stupid is not a hot take. Like, at _all_.
@@ -48,25 +43,29 @@ Except it works great _right_ up until the point where some stakeholder changes 
 
 Stakeholders are human beings who need to iterate on their ideas just as much as we need to iterate on code. They also tend to enjoy reacting to market forces and user feedback. Perhaps zoomers hate the use of the comma in _"Hello, { name }"_. Who knows?
 
-## Why this is worth a rant
+## At least you're not just deploying everything... right?
 
-It would be pretty annoying if that was all there was to it. But as a surprise and unwelcome slice of tomato to top off the shit sandwich that is TDD, we add _Trunk based development_.
+It would be pretty annoying if that was all there was to it. But as an unwelcome slice of 3-day-old tomato to top off the shit sandwich that is TDD, we add _Trunk based development_.
 
 Instead of using feature branches, just push everything to `main`! I'm sure it'll be fine, right? Nobody can do anything stupid, because you've already written all the tests to guarantee that if something breaks, it won't go to production!
 
+Except in the real world, software development is a lot like magic. The people doing the magic have about a 50-50 chance of understanding what's going on behind the curtain, but the people asking for it definitely have no clue. As such they have no frame of reference for how hard or easy things are and are prone to have unrealistic expectations. So far, so human. But then you pair them with developers who frequently owe their livelyhoods to those magic requesters and want to please them, and might take a few shortcuts to do so.
+
+![You're not deploying straight to production, right?](yolo-deploy.jpeg)
+{ .flex .justify-center }
+
+Even worse, maybe someone wrote a test, but it isn't a _good_ test. Testing is hard! I get it! But the test doesn't cover an edge case that actually happens a lot and didn't break before because you got lucky. Now you've broken it, not detected it, and because everything gets deployed to production, your users are going to be first in line to get a taste of your failure. Ouch.
+
+## The worst part is, it's your fault
+
+The basic tenet of TDD+trunk-based is "If your tests pass it can be deployed without issue", which is great until your junior dev comes along and breaks everything at 16:55 on a Friday, because they changed the test, committed everything before the weekend (as they should), and went home.
+
+And it's your fault, because you let a junior dev push to production on Friday afternoon.
 
 
-## I'm not salty, you're salty
+## I'm not salty, you're salty!
 
 Yeah I'm salty, because I have yet to see TDD actually work in the wild, but I've seen plenty of self-proclaimed "software architects" push for the idea. They obviously haven't ever written any code for production, or they'd know that real-world software development is not sped up by more procedures and processes, but by getting the hell out of the way and letting people work.
 
 As such, if you come and talk to my team, and you're telling us that moving to TDD and only working trunk-based is a great idea, I immediately write you off as a moron and you're going to have to work incredibly hard to earn that trust back. I have better things to do with my time that deliver more value.
 
-
-“if your tests pass it can be deployed no problem”
-
-which is great until a junior dev comes along and breaks everything
-
-and it’s your dumb ass fault because you let juniors push straight to production
-
-I’m not salty you’re salty
