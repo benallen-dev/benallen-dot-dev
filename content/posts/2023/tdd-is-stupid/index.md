@@ -45,7 +45,7 @@ Stakeholders are human beings who need to iterate on their ideas just as much as
 
 ## At least you're not just deploying everything... right?
 
-It would be pretty annoying if that was all there was to it. But as an unwelcome slice of 3-day-old tomato to top off the shit sandwich that is TDD, we add _Trunk based development_.
+It would be pretty annoying if that was all there was to it. But as an unwelcome slice of 3-day-old tomato to top off the shit sandwich that is TDD, we add _trunk-based development_.
 
 Instead of using feature branches, just push everything to `main`! I'm sure it'll be fine, right? Nobody can do anything stupid, because you've already written all the tests to guarantee that if something breaks, it won't go to production!
 
