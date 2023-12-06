@@ -49,7 +49,7 @@ It would be pretty annoying if that was all there was to it. But as an unwelcome
 
 Instead of using feature branches, just push everything to `main`! I'm sure it'll be fine, right? Nobody can do anything stupid, because you've already written all the tests to guarantee that if something breaks, it won't go to production!
 
-Except in the real world, software development is a lot like magic. The people doing the magic have about a 50-50 chance of understanding what's going on behind the curtain, but the people asking for it definitely have no clue. As such they have no frame of reference for how hard or easy things are and are prone to have unrealistic expectations. So far, so human. But then you pair them with developers who frequently owe their livelyhoods to those magic requesters and want to please them, and might take a few shortcuts to do so.
+Except in the real world, software development is a lot like magic. The people doing the magic have around a 50-50 chance of understanding what's going on behind the curtain, but the people asking for it definitely have no clue. As such they have no frame of reference for how hard or easy things are and are prone to have unrealistic expectations. So far, so human. But then you pair them with developers who frequently owe their livelihoods to those magic requesters and want to please them, and might take a few shortcuts to do so.
 
 ![You're not deploying straight to production, right?](yolo-deploy.jpeg)
 { .flex .justify-center }
