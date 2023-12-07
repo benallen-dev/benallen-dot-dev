@@ -7,7 +7,8 @@ module.exports = {
 				DEFAULT: {
 					css: {
 						code: {
-							padding: '.2em .4em',
+							padding: '.1em .2em',
+							fontWeight: '400',
 							backgroundColor: theme('colors.stone.950'),
 							borderRadius: theme('borderRadius.DEFAULT'),
 						},
