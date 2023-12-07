@@ -7,8 +7,6 @@ tags:
 resources:
   - name: banner
     src: yoda.jpg
-attribution:
-references:
 ---
 
 I built a website so I could publish stuff, and then I didn't publish anything.

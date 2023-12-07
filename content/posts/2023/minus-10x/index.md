@@ -2,11 +2,11 @@
 title: I am a -10x engineer (on purpose)
 date: 2023-10-28T10:04:02+02:00
 description: When you only build requested features, you're skipping a crucial aspect of software engineering.
+tags:
+    - soft skills
 resources:
   - name: banner
     src: conspiracy.webp
-attribution:
-  - Add image or other credits here (optional)
 references:
   - '<a target="_blank" href="https://taylor.town/-10x" alt="How to be a -10x Engineer">How to be a -10x Engineer</a>'
 draft: true

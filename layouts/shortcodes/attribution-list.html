@@ -1,16 +1,18 @@
 {{ $attributions := slice }}
 
-<ul>
+<ul class="not-prose">
 {{ range .Site.RegularPages }}
-    {{ if isset .Params "attribution" }}
-	<li>
-
+    {{ if or (isset .Params "attribution") (isset .Params "references") }}
+	<li class="pb-2">
 		<h2 class="text-lg text-stone-300"><span class="font-bold">{{ .Title }}</span><span class="pl-8 text-sm font-light text-gray-500">{{ .Date.Format "January 2, 2006" }}</span></h2>
-		<ul>
-			{{ range .Params.attribution }}
-			<li class="prose prose-stone prose-invert pl-8">{{ . | safeHTML }}</li>
-			{{ end }}
-		</ul>
+			<ul>
+				{{ range .Params.attribution }}
+				<li class="prose prose-stone prose-invert pl-8">{{ . | safeHTML }} <span class="pl-2 text-xs text-stone-500">(attribution)</span></li>
+				{{ end }}
+				{{ range .Params.references }}
+				<li class="prose prose-stone prose-invert pl-8">{{ . | safeHTML }} <span class="pl-2 text-xs text-stone-500">(reference)</span></li>
+				{{ end }}
+			</ul>
 	</li>
 	{{ end }}
 {{ end }}

@@ -1,17 +1,10 @@
 {{ define "main" -}}
-
 <main class="gap-6 py-6">
 	<header>
 		<h1 class="mb-4 text-5xl font-bold text-stone-50">{{ .Title }}</h1>
 	</header>
-	{{ if eq .Title "Attribution" }}
-	<section>
-		{{ .Content }}
-	</section>
-	{{ else }}
 	<section class="prose prose-invert prose-stone">
 		{{ .Content }}
 	</section>
-	{{ end }}
 </main>
 {{ end }}
