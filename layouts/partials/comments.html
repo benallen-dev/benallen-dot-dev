@@ -5,10 +5,14 @@
 	// v0 is a really nice experience tbh
 -->
 
+<!--
+	Note that the only 'HTMX' specific thing here is the hx-* attributes.
+	They only exist on the comment-list div, and the comment-form form.
+-->	
+
 {{ $slug := split .RelPermalink "/" }}
 {{ $slug = collections.Reverse $slug }}
 {{ $slug = index $slug 1 }}
-<p>Comments for {{ $slug }}</p>
 <div id="comment-list" hx-get="http://localhost:3000/comments/{{ $slug }}" hx-trigger="load" class="flex flex-col gap-4 border border-gray-300 rounded-md p-4">
 	<p class="text-stone-500">Comments will be shown here, this is a placeholder. The classes used here are to trick tailwind into including them in the CSS file, so we can use them in the server response.</p>
 </div>
