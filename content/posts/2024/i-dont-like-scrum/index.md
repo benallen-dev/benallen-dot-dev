@@ -50,5 +50,5 @@ This is a straight-up skill issue. It's not that hard, just send them a message.
 - Kanban is not for 0.1x devs because now it'll become super obvious that tickets with their face on em will take forever
 - Kanban is not for Scrum Masters because if all there is is a list of prioritised work, what are you going to do during refinements?
 
-TL;DR - RIP Scrum let's just do 
+TL;DR - RIP Scrum let's just do our jobs k
 
