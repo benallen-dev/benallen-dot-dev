@@ -9,7 +9,6 @@ resources:
     src: conspiracy.webp
 references:
   - '<a target="_blank" href="https://taylor.town/-10x" alt="How to be a -10x Engineer">How to be a -10x Engineer</a>'
-draft: true
 ---
 
 ## Wait, what?

@@ -18,7 +18,8 @@
 </div>
 
 <div id="comment-form">
-	<form hx-post="http://localhost:3000/comments/{{ $slug }}" hx-target="#comment-list" hx-swap="beforeend">
+	<!-- That tiny bit of JS is just to reset the form after submission - this is how JS was intended to be used, not these gargantuan frameworks. -->
+	<form hx-post="http://localhost:3000/comments/{{ $slug }}" hx-target="#comment-list" hx-swap="beforeend" onsubmit="setTimeout(() => { this.reset() }, 50)">
 
 		<div
 			class="flex flex-col gap-4 border border-gray-300 rounded-md p-4 text-stone-800"
@@ -46,7 +47,7 @@
 					placeholder="Type your comment here..."
 					type="text"
 				/>
-				<button
+				<input
 					class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-stone-900 text-white"
 					type="submit"
 				>
