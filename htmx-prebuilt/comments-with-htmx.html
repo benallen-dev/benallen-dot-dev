@@ -1,19 +1,27 @@
 
+<!--
+	// v0 by Vercel.
+	// https://v0.dev/t/YQHMiDbZrWP
+	
+	// v0 is a really nice experience tbh
+-->
+
+<!--
+	Note that the only 'HTMX' specific thing here is the hx-* attributes.
+	They only exist on the comment-list div, and the comment-form form.
+-->	
+
 {{ $slug := split .RelPermalink "/" }}
 {{ $slug = collections.Reverse $slug }}
 {{ $slug = index $slug 1 }}
-<div id="comment-list" hx-trigger="load" hx-get="http://localhost:3000/comments/{{ $slug }}" class="flex flex-col gap-4 border border-gray-300 rounded-md p-4">
-	<p>The slug for this page is <code>{{ $slug }}</code></p>
+<div id="comment-list" hx-get="http://localhost:3000/comments/{{ $slug }}" hx-trigger="load" class="flex flex-col gap-4 border border-gray-300 rounded-md p-4">
 	<p class="text-stone-500">Comments will be shown here, this is a placeholder. The classes used here are to trick tailwind into including them in the CSS file, so we can use them in the server response.</p>
 </div>
 
 <div id="comment-form">
+	<!-- That tiny bit of JS is just to reset the form after submission - this is how JS was intended to be used, not these gargantuan frameworks. -->
+	<form hx-post="http://localhost:3000/comments/{{ $slug }}" hx-target="#comment-list" hx-swap="beforeend" onsubmit="setTimeout(() => { this.reset() }, 50)">
 
-	<form 
-		hx-post="http://localhost:3000/comments/{{ $slug }}" 
-		hx-target="#comment-list" 
-		hx-swap="beforeend" 
-		onsubmit="setTimeout(() => { this.reset() }, 50)">
 		<div
 			class="flex flex-col gap-4 border border-gray-300 rounded-md p-4 text-stone-800"
 		>
