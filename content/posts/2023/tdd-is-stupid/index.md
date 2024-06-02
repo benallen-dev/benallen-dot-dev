@@ -27,7 +27,7 @@ This works great for tiny examples.
 
 Great. Easy peasy.
 
-```typescript
+```javascript
 // This is whatever random ass e2e testing framework you want it to be
 test('echoes user input', (page) => {
     await page.visit('/hello');
