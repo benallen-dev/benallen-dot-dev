@@ -1,9 +1,10 @@
 ---
 title: Kanban >> Scrum
-date: 2024-01-09T16:11:35+01:00
+date: 2024-08-31T16:11:35+01:00
 description: If everyone on your team is competent, kanban is fine and you should stop wasting time on pretending to estimate complexity.
 tags:
   - Lukewarm takes
+  - Scrum
 resources:
   - name: banner
     src: filename relative to index.md for banner image (optional)
@@ -16,7 +17,7 @@ draft: true
 
 Seriously, I'm just tired of scrum.
 
-Before, I was ok with scrum. It was just a way to organise your work and make sure the right things get done. 
+Before, I was ok with scrum. It was just a way to organise your work and make sure the right things get done. These days I know exactly where we're going, so I don't need a daily check-in to just start work.
 
 ## Who is scrum even for?
 
