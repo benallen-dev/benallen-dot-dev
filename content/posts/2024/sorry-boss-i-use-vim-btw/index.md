@@ -27,7 +27,7 @@ Some people think to themselves _"I want a cool car. I'm going to buy one of tho
 
 And then there's people who go _"Wait, I can buy a __kit__ of parts and __build my own car__?! I want this! I need this! I don't care if other people can't drive it because I put the clutch pedal on the right!"_
 
-I'm the guy who wants to build his own car and put the clutch pedal on the right. For some reason, my brain just thinks that's where it should be. Perhaps not in the case of an actual clutch pedal, but when it comes to software that's 100% me. I'm not even talking about ricing, which I think jumps the shark a bit, but being able to customise your tools to the point where everything just feels natural. Modifying your environment to the point where you barely notice it because it's super smooth is a benefit that is hard to overstate.
+I'm the guy who wants to build his own car and put the clutch pedal on the right. For some reason, my brain just thinks that's where it should be. Perhaps not in the case of an actual clutch pedal, but when it comes to software that's 100% me. I'm not talking about ricing, which I think jumps the shark a bit. I'm talking about customising your tools to the point where everything just feels natural instead of trying to remember `za` to fold a code block. Honestly, how is that the default? Having an environment where you barely notice it because it's super smooth is a benefit that is hard to overstate.
 
 ## Neovim btw
 
@@ -38,7 +38,7 @@ I've been a neovim user for around 18 months now (thanks [Prime](https://www.you
 
 Turns out I had partially recreated [imgcat](https://github.com/danielgatis/imgcat). Whoops. I have since stolen the idea of using the `▄` character instead of using `██`, but you get where I'm going. I tend to build my own solutions to things, usually mumbling an excuse like "I'm also doing this to learn, so it's ok". 
 
-While it's true that doing things in this way will make you naturally pick things up as you gather a little bit of knowledge and experience in various topics, it's definitely not the most efficient way of doing things. The same is true of the text editor setup. Unless you're happy to install a distro and just learn the way it works, assembling a neovim config is like a samurai honing the edge of his sword until it's perfect. The same goes for things like terminals. Polish until perfection, or at least good enough to slice your enemies.
+While it's true that doing things in this way will make you naturally pick things up as you gather a little bit of knowledge and experience in various topics, it's definitely not the most efficient way of doing things. The same is true of the text editor setup. Unless you're happy to install a distro and just learn the way it works, assembling a neovim config is like a samurai honing the edge of his sword until it's exactly where it needs to be. Polish until perfection, or at least good enough to slice your enemies.
 
 Before anyone gets worried my enemies are bugs and bad code, not people, ok? Just wanted to mention that. Also, your production deployment is not the place to use your home-spun implementation of Redis. Just use actual Redis for production, don't come at me because your app went down because your implementation of `MSET` has a memory leak.
 
@@ -60,7 +60,7 @@ My own teammates seemed to be resistant to Neovim at first, but yesterday I star
 
 You will never hear from me that trying Neovim is a bad idea, but I laughed my ass off when I realised the only person getting any work done was the guy who only just joined the team. Needless to say I spent the day helping my teammates with their configs and smugly pasting autocommands in chat.
 
-Suddenly one of the guys starts laughing, so I ask him "what's so funny?". He replies "you have single-handedly cost so much money, not by spending it but just the sheer number of wasted developer time when people try vim".
+Suddenly one of the guys starts laughing, so I ask him "what's so funny?". He replies "You have single-handedly cost so much money, not by spending it but just the sheer amount of wasted developer time when people try vim".
 
 **He's probably not wrong.**
 
