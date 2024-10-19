@@ -1,7 +1,7 @@
 {{ define "main" -}}
 <main class="grid auto-rows-auto grid-cols-12 gap-4 py-6">
 
-	<section class="col-span-4 hidden items-center justify-center md:flex">
+	<section class="col-span-4 py-6 hidden items-center justify-center md:flex">
 		{{ $img := resources.Get "images/ben-selfie-posterized.png" }}
 		{{ $img120 := $img.Resize "120x webp"}}
 		{{ $img240 := $img.Resize "240x webp"}}
@@ -13,11 +13,11 @@
 	</section>
 
 	<section
-		class="prose prose-invert col-span-12 my-4 prose-blockquote:my-2 prose-blockquote:rounded prose-blockquote:border-l-4 prose-blockquote:border-pink-600 prose-blockquote:bg-stone-700 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-right prose-blockquote:text-stone-50 md:col-span-8">
+		class="col-span-13 prose prose-invert py-6 text-lg prose-blockquote:my-2 prose-blockquote:rounded prose-blockquote:border-l-4 prose-blockquote:border-pink-600 prose-blockquote:bg-stone-700 prose-blockquote:px-4 prose-blockquote:py-1 prose-blockquote:text-right prose-blockquote:text-stone-50 md:col-span-8">
 		{{ .Content }}
 	</section>
 
-	{{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+	{{ range first 6 (where .Site.RegularPages "Section" "posts") }}
 	<div class="col-span-12 overflow-hidden border border-stone-500 md:col-span-4">
 		{{ partial "post-card.html" . }}
 	</div>
