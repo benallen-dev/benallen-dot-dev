@@ -1,5 +1,5 @@
 ---
-title: I cost my employer so much money
+title: Sorry boss, I use neovim (btw)
 date: 2024-10-19T11:18:35+02:00
 description: It's not like I waste money on purpose but this just keeps happening, ok?
 tags:
