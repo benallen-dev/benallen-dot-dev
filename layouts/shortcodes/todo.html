@@ -1,0 +1,25 @@
+{{- /*
+Renders an inline todo item, but only when using `hugo serve`
+
+@param {string} [alert] The text to display when clicking the TODO
+
+@returns {template.HTML}
+
+@example {{< todo "Create TODO app in a different web framework" >}}
+*/}}
+
+{{- if .Site.IsServer }}
+  {{- with $alert := or (.Get "alert") (.Get 0) }}
+
+    {{- /* Set defaults. */}}
+    {{- /* Render. */ -}}
+    <span
+	class="underline cursor-pointer text-white font-bold"
+{{- with $alert }} onClick="alert('TODO: {{ . }}')" {{- end }}
+    >
+		TODO
+    </span>
+  {{- else }}
+    {{- errorf "The %q shortcode requires an alert argument. See %s" .Name .Position }}
+  {{- end }}
+{{- end }}

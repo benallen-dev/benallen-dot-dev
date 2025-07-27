@@ -1,7 +1,7 @@
 baseURL = 'https://benallen.dev'
 languageCode = 'en-us'
 
-title = 'Write Code, Not Apologies'
+title = "Ben's Tech Blog"
 copyright = "2023-{year} benallen.dev"
 
 [pagination]
